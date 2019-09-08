@@ -14,3 +14,17 @@ docker-compose up
 ```
 docker-compose down
 ```
+
+# パッケージのインストール
+## front
+
+```
+docker-compose run front yarn install <package name>
+```
+
+## back
+gemfileを更新後に以下のコマンドを実行
+
+```
+docker-compose build
+```
