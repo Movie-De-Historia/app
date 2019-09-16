@@ -5,6 +5,11 @@ services:
     image: postgres:10.4
     volumes:
       - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_PASSWORD=mysecretpassword1234"
   api:
     build: ./api
     command: /bin/sh -c "rm -f /app/tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
@@ -13,12 +18,15 @@ services:
       - ./api:/app
       - ./api/vendor/bundle:/app/vendor/bundle
     environment:
-      TZ: Asia/Tokyo
-      RAILS_ENV: development
+      - "DATABASE_HOST=db"
+      - "DATABASE_PORT=5432"
+      - "DATABASE_USER=postgres"
+      - "DATABASE_PASSWORD=mysecretpassword1234"
     ports:
       - 3000:3000
-    depends_on:
+    links:
       - db
+    stdin_open: true
   front:
     build: ./front
     command: yarn start
