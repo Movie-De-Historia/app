@@ -4,6 +4,7 @@
 ```
 docker-compose build
 docker-compose run front yarn
+docker-compose run api bundle exec rails db:migrate
 docker-compose run api bundle exec rails db:create
 docker-compose up
 ```
