@@ -1,12 +1,9 @@
 class UsersController < ApplicationController
   # skip_before_filter :verify_authenticity_token
-  def new
-    @user = User.new
-  end
 
   def show
-    @users = User.all
-    render json:{status: 'SUCCESS', users: @users}
+    @user = User.find(params[:id])
+    render json:{status: 'SUCCESS', user: @user}
   end
 
   def create
@@ -23,16 +20,9 @@ class UsersController < ApplicationController
     end
   end
 
-  private
-
-  def user_params
-    json_request = JSON.parse(request.body.read)
-    if !json_request.blank?
-      personal = json_request
-    else
-      personal = {'status' => 500}
-    end
-    render :json => personal
-    # params.require(:users).permit(:name, :mail, :password, :password_confirmation)
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    render json: { status: 'SUCCESS', message: 'deleted the post', data: @user }
   end
 end

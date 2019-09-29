@@ -2,18 +2,21 @@ class SessionsController < ApplicationController
   before_action :set_user, only: [:create]
 
   def create
-    if @user.authenticate(session_params[:password])
-      sign_in(@user)
-      render json:{status: 'SUCCESS', message: ''}
+    # メールアドレスでユーザーを検索
+    user = User.find_by(email: params[:session][:email])
+    # パスワードの一致を検証
+    if user && user.authenticate(params[:session][:password])
+      session[:user_id] = user.id
+      render json:{status: 'SUCCESS', message: 'login'}
     else
-      flash.now[:danger] = t('.flash.invalid_password')
-      render json:{status: 'ERROR', message: 'can not create account'}
+      render json:{status: 'ERROR'}
     end
   end
 
   def destroy
     user = User.find(params[:email])
-    render json:{status: 'SUCCESS', 'delete account'}
+    session[:user_id] = nil
+    render json:{status: 'SUCCESS', message: 'delete account'}
   end
 
   private
@@ -22,11 +25,12 @@ class SessionsController < ApplicationController
       @user = User.find_by!(email: session_params[:email])
     rescue
       flash.now[:danger] = t('.flash.invalid_mail')
-      render action: 'new'
+      render json:{status: "none"}
     end
 
     # 許可するパラメータ
     def session_params
-      params.require(:session).permit(:email, :password)
+      json_request = JSON.parse(request.body.read)
+      params.require(:session).permit(json_request[:email], json_request[:password])
     end
 end
