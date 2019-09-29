@@ -2,12 +2,12 @@
 
 one:
   name: MyString
-  email: MyString
+  mail: MyString
   password_digest: MyString
-  remember_token: MyString
+  token: 
 
 two:
   name: MyString
-  email: MyString
+  mail: MyString
   password_digest: MyString
-  remember_token: MyString
+  token: 
