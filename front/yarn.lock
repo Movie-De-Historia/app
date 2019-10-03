@@ -8023,6 +8023,11 @@ react-is@^16.8.1, react-is@^16.8.4:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.9.0.tgz#21ca9561399aad0ff1a7701c01683e8ca981edcb"
   integrity sha512-tJBzzzIgnnRfEm046qRcURvwQnZVXmuCbscxUO5RWrGTXpon2d4c8mI0D8WE6ydVIm29JiLB6+RslkIvym9Rjw==
 
+react-samy-svg@^3.0.7:
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/react-samy-svg/-/react-samy-svg-3.0.7.tgz#6c2a533e6f5df84772a7dd0cad0f2ab31d2f40e8"
+  integrity sha512-pSMNBncpybuvvk8ih4Gwp3kFxHpzJaOHQJt5r+PfuImhAiUDDNAMEqz11oiWzvhrPeT4UBAEYxnF/Pged9pqAQ==
+
 react-scripts@3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-3.1.1.tgz#1796bc92447f3a2d3072c3b71ca99f88d099c48d"

@@ -1,23 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
+import kachinko_open from './kachinko_open.svg';
+import kachinko_close from './kachinko_close.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <img src={kachinko_open} className="App-logo1" alt="logo" />
+        <img src={kachinko_close} className="App-logo2" alt="logo" />
+        <img src={kachinko_close} className="App-logo3" alt="logo" />
       </header>
     </div>
   );
