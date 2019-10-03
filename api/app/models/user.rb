@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_secure_token
   has_secure_password
   has_many :review
+  has_many :log
 
   validates :name, presence: true, length: { maximum: 10 }
 
