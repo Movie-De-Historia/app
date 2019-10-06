@@ -10,10 +10,57 @@
   pointer-events: none;
 }
 
+.Content-film-short {
+  position: relative;
+  animation: App-logo-spin infinite 20s linear;
+  height: 30min;
+  margin-top: 0px;
+  pointer-events: none;
+}
+
+.App-body-short {
+  position: relative;
+  background-color: white;
+  top: 100%;
+  min-height: 50vh;
+  margin-top: 80px; /*header分のマージン*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: burlywood;
+}
+
+.logo-return {
+  position: absolute;/*絶対配置*/
+  background-color: black;
+  color:rgb(255, 0, 0);
+  top: 50%;
+  left: 10%;
+  width: 25px;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
 .Content-kachinko-open-title{
   position: absolute;/*絶対配置*/
   display: inline;
   color:rgb(255, 255, 255);
+  top: 65%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+}
+
+.Left-Botton-moji{
+  position: absolute;/*絶対配置*/
+  display: inline;
+  color:rgb(255, 0, 0);
   top: 65%;
   left: 50%;
   -ms-transform: translate(-50%,-50%);
@@ -42,33 +89,59 @@
   pointer-events: none;
 }
 
-.Header-logo{
+.Header-logo-black{
   background-color: black;
   position:absolute; top:15px; right:10px;
   color: white;
 }
 
-.Footer-unknown{
+.Header-logo-gray{
+  background-color: rgb(205, 205, 205);
+  position:absolute; top:15px; right:10px;
+  color: black;
+}
+
+.Footer-unknown-black{
   background-color: black;
   position:absolute; bottom:20px; left:40px;
   display: flex;
   color: white;
 }
 
-.Footer-plane{
+.Footer-unknown-gray{
+  background-color:rgb(205, 205, 205);
+  position:absolute; bottom:20px; left:40px;
+  display: flex;
+  color: black;
+}
+
+.Footer-plane-black {
   background-color: black;
   position:absolute; bottom:20px; left: 175px;
   color: white;
 }
 
-.Footer-gear{
+.Footer-plane-gray {
+  background-color: rgb(205, 205, 205);
+  position:absolute; bottom:20px; left: 175px;
+  color: black;
+}
+
+.Footer-gear-black {
   background-color: black;
   display: flex;
   position:absolute; bottom:20px; right:40px;
   color: white;
 }
 
-.App-header {
+.Footer-gear-gray {
+  background-color: rgb(205, 205, 205);
+  display: flex;
+  position:absolute; bottom:20px; right:40px;
+  color: black;
+}
+
+.App-header-black {
   position: fixed; /* ヘッダーを固定する */
   top: 0; /* 上部から配置の基準位置を決める */
   left: 0; /* 左から配置の基準位置を決める */
@@ -84,6 +157,22 @@
   color:white; /* ヘッダーのフォントの色を指定する */
 }
 
+.App-header-gray {
+  position: fixed; /* ヘッダーを固定する */
+  top: 0; /* 上部から配置の基準位置を決める */
+  left: 0; /* 左から配置の基準位置を決める */
+  width: 100%; /* ヘッダーの横幅を指定する */
+  height: 60px; /* ヘッダーの高さを指定する */
+  padding: 0px; /* ヘッダー内側の余白を指定する(上下左右) */
+  background-color:rgb(205, 205, 205); /* ヘッダーの背景色を指定する */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(8px + 2vmin);
+  color:black; /* ヘッダーのフォントの色を指定する */
+}
+
 .App-body {
   background-color: white;
   min-height: 100vh;
@@ -95,13 +184,7 @@
   color: burlywood;
 }
 
-.App-footer {
-  
-  /*background-color: black;*/
-  /*min-height: 10vh;*/
-  /*height: auto;*/
-  /*margin-bottom: 0;*/
-  /*bottom: 0;*/
+.App-footer-black {
   position: fixed; /* フッターを固定する */
   bottom: 0; /* 上部から配置の基準位置を決める */
   left: 0; /* 左から配置の基準位置を決める */
@@ -110,6 +193,50 @@
   padding: 0px; /* フッター内側の余白を指定する(上下左右) */
   background-color: black; /* フッターの背景色を指定する */
   color: #FFFFFF; /* フッターのフォントの色を指定する */
+}
+
+.App-footer-gray {
+  position: fixed; /* フッターを固定する */
+  bottom: 0; /* 上部から配置の基準位置を決める */
+  left: 0; /* 左から配置の基準位置を決める */
+  width: 100%; /* フッターの横幅を指定する */
+  height: 60px; /* フッターの高さを指定する */
+  padding: 0px; /* フッター内側の余白を指定する(上下左右) */
+  background-color: rgb(205, 205, 205); /* フッターの背景色を指定する */
+  color: black; /* フッターのフォントの色を指定する */
+}
+
+.Button {
+  position: relative;
+  display: inline-block;
+  padding: 0px;
+  margin: 0px;
+  height: 40px;
+  top: 0px;
+}
+
+.Left-Button {
+  position: relative;
+  padding-right: 10px;
+  margin: 0px;
+  top: 5px;
+  border: "none";
+}
+
+.Center-Button {
+  position: relative;
+  top: 5px;
+}
+
+.Right-Button {
+  position: relative;
+  padding-left: 10px;
+  top: 5px;
+}
+
+.Send-Button {
+  position: relative;
+  top: 15px;
 }
 
 /*
