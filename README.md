@@ -26,7 +26,7 @@ docker-compose down
 ## front
 
 ```
-docker-compose run front yarn install <package name>
+docker-compose run front yarn add <package name>
 ```
 
 ## back
