@@ -4,6 +4,7 @@ import Content1 from './Content1';
 import Content2 from './Content2';
 import Content3 from './Content3';
 import Content4 from './Content4';
+import Content5 from './Content5';
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route exact path='/Content2' component={Content2} />
           <Route exact path='/Content3' component={Content3} />
           <Route exact path='/Content4' component={Content4} />
+          <Route exact path='/Content5' component={Content5} />
         </>
       </BrowserRouter>
     </>

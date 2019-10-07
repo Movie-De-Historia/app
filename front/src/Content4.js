@@ -11,7 +11,7 @@ function Content4() {
 
     return (
         <>
-        <Header displayLogoReturn={true}/>
+        <Header displayLogoReturn={true} title="送信箱"/>
         <Footer/>
             
             <body className="App-body-short">
@@ -21,8 +21,8 @@ function Content4() {
                 </div>
 
                 <div className="Button">
-                    <img src={logo_botton} className="Left-Button" alt="logo" />
-                    <img src={logo_botton} className="Right-Button" alt="logo" />
+                    <img src={logo_botton} className="Content4-Left-Button" alt="logo" />
+                    <img src={logo_botton} className="Content4-Right-Button" alt="logo" />
                 </div>
                 
                 <div className="Send-Button">

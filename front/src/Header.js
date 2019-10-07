@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 function Header(props) {
     let LogoReturn;
     let DisplayColor;
+    let title = props.title;
 
     if (props.displayLogoReturn) {
         LogoReturn = <img src={logo_return} className="logo-return" alt="logo" />
@@ -21,7 +22,7 @@ function Header(props) {
     
     return (
         <header className={"App-header-" + DisplayColor}>
-            <h1>受信一覧</h1>
+            <h1>{title}</h1>
             <Link to='/Content1'> {LogoReturn} </Link>
             <img src={human} className={"Header-logo-" + DisplayColor} alt="logo" />
         </header>
@@ -31,6 +32,7 @@ function Header(props) {
 Header.defaultProps = {
     displayLogoReturn: false,
     displayColor: "black",
+    title: "受信一覧",
 };
 
 export default Header;

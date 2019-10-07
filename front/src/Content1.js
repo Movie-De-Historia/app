@@ -5,7 +5,7 @@ import kachinko_open from './kachinko_open.svg';
 import kachinko_close from './kachinko_close.svg';
 
 function Content1() {
-    const title = "タイトル！";
+    const title = "タイトル";
     return (
         <>
             <Header/>

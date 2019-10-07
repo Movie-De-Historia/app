@@ -234,9 +234,34 @@
   top: 5px;
 }
 
+.Content4-Left-Button {
+  position: relative;
+  padding-right: 28px;
+  top: 5px;
+  width: 110px;
+}
+
+.Content4-Right-Button {
+  position: relative;
+  padding-left: 28px;
+  top: 5px;
+  width: 110px;
+}
+
 .Send-Button {
   position: relative;
   top: 15px;
+}
+
+.Long-Button {
+  width: 327px;
+  height: 37px;
+  left: 24px;
+  top: 550px;
+
+  margin-top: 20px;
+  background: #000000;
+  border-radius: 23px;
 }
 
 /*
