@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  review: one
+  look_at: 2019-10-03 08:09:31
+  like: false
+
+two:
+  user: two
+  review: two
+  look_at: 2019-10-03 08:09:31
+  like: false
