@@ -1,10 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
-import Content1 from './Content1';
+import ReceivedList from './ReceivedList';
 import Content2 from './Content2';
-import Content3 from './Content3';
+import ReceivedBox from './ReceivedBox';
 import Content4 from './Content4';
-import Content5 from './Content5';
+import OutBox from './OutBox';
+import AfterSaving from './AfterSaving';
+import MyPage from './MyPage';
+import Setting from './Setting';
 import './App.css';
 
 function App() {
@@ -12,11 +15,14 @@ function App() {
     <>
       <BrowserRouter>
         <>
-          <Route exact path='/Content1' component={Content1} />
+          <Route exact path='/ReceivedList' component={ReceivedList} />
           <Route exact path='/Content2' component={Content2} />
-          <Route exact path='/Content3' component={Content3} />
+          <Route exact path='/ReceivedBox' component={ReceivedBox} />
           <Route exact path='/Content4' component={Content4} />
-          <Route exact path='/Content5' component={Content5} />
+          <Route exact path='/OutBox' component={OutBox} />
+          <Route exact path='/AfterSaving' component={AfterSaving} />
+          <Route exact path='/MyPage' component={MyPage} />
+          <Route exact path='/Setting' component={Setting} />
         </>
       </BrowserRouter>
     </>

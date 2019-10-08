@@ -1,0 +1,58 @@
+.App-header-black {
+    z-index: 1;
+    position: fixed; /* ヘッダーを固定する */
+    top: 0; /* 上部から配置の基準位置を決める */
+    left: 0; /* 左から配置の基準位置を決める */
+    width: 100%; /* ヘッダーの横幅を指定する */
+    height: 48px; /* ヘッダーの高さを指定する */
+    padding: 0px; /* ヘッダー内側の余白を指定する(上下左右) */
+    background-color:black; /* ヘッダーの背景色を指定する */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(8px + 2vmin);
+    color:white; /* ヘッダーのフォントの色を指定する */
+}
+
+.App-header-gray {
+    z-index: 1;
+    position: fixed; /* ヘッダーを固定する */
+    top: 0; /* 上部から配置の基準位置を決める */
+    left: 0; /* 左から配置の基準位置を決める */
+    width: 100%; /* ヘッダーの横幅を指定する */
+    height: 48px; /* ヘッダーの高さを指定する */
+    padding: 0px; /* ヘッダー内側の余白を指定する(上下左右) */
+    background-color:rgb(205, 205, 205); /* ヘッダーの背景色を指定する */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(8px + 2vmin);
+    color:black; /* ヘッダーのフォントの色を指定する */
+}
+
+.logo-return {
+    position: absolute;
+    width: 30px;
+    height: 31.71px;
+    left: 13px;
+    top: 8px;
+}
+
+.test {
+    position: absolute;
+    top: 10px;
+    left: 18px;
+    margin: 0px;
+}
+
+.Rest {
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+}
+
+.LifeTime {
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+}

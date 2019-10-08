@@ -1,0 +1,84 @@
+.App-footer-black {
+    z-index: 1;
+    position: fixed; /* フッターを固定する */
+    bottom: 0; /* 上部から配置の基準位置を決める */
+    left: 0; /* 左から配置の基準位置を決める */
+    width: 100%; /* フッターの横幅を指定する */
+    height: 48px; /* フッターの高さを指定する */
+    padding: 0px; /* フッター内側の余白を指定する(上下左右) */
+    background-color: black; /* フッターの背景色を指定する */
+    color: #FFFFFF; /* フッターのフォントの色を指定する */
+}
+
+.App-footer-gray {
+    z-index: 1;
+    position: fixed; /* フッターを固定する */
+    bottom: 0; /* 上部から配置の基準位置を決める */
+    left: 0; /* 左から配置の基準位置を決める */
+    width: 100%; /* フッターの横幅を指定する */
+    height: 48px; /* フッターの高さを指定する */
+    padding: 0px; /* フッター内側の余白を指定する(上下左右) */
+    background-color: rgb(205, 205, 205); /* フッターの背景色を指定する */
+    color: black; /* フッターのフォントの色を指定する */
+}
+
+.Footer-unknown-black{
+    position:absolute;
+    bottom:13px;
+    left:46px;
+    width: 25px;
+    height: 25px;
+    background-color: black;
+    color: white;
+}
+
+.Footer-unknown-gray{
+    position:absolute;
+    bottom:13px;
+    left:46px;
+    width: 25px;
+    height: 25px;
+    background-color:rgb(205, 205, 205);
+    color: black;
+    
+}
+
+.Footer-plane-black {
+    position: absolute;
+    width: 25px;
+    left: 175px;
+    height: 25px;
+    bottom: 13px;
+    background-color: black;
+    color: white;
+}
+
+.Footer-plane-gray {
+    position:absolute;
+    width: 25px;
+    left: 175px;
+    height: 25px;
+    bottom: 13px;
+    background-color: rgb(205, 205, 205);
+    color: black;
+}
+
+.Footer-gear-black {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 304px;
+    bottom: 13px;
+    background-color: black;
+    color: white;
+}
+
+.Footer-gear-gray {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 304px;
+    bottom: 13px;
+    background-color: rgb(205, 205, 205);
+    color: black;
+}

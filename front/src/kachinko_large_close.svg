@@ -1,0 +1,36 @@
+<svg width="265" height="155" viewBox="0 0 265 155" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="5" y="51" width="256" height="104" fill="black"/>
+<g clip-path="url(#clip0)">
+<rect width="265" height="23" fill="white"/>
+<rect width="281" height="26" fill="black"/>
+<rect width="16.6682" height="30.7477" transform="matrix(0.99282 -0.119617 0.279623 0.96011 10 -1.2644)" fill="white"/>
+<rect width="16.6682" height="30.7477" transform="matrix(0.99282 -0.119617 0.279623 0.96011 42 -1.00623)" fill="white"/>
+<rect width="16.6682" height="30.7477" transform="matrix(0.99282 -0.119617 0.279623 0.96011 74 -1.00623)" fill="white"/>
+<rect width="16.6682" height="30.7477" transform="matrix(0.99282 -0.119617 0.279623 0.96011 106 -2.00623)" fill="white"/>
+<rect width="16.6682" height="30.7477" transform="matrix(0.99282 -0.119617 0.279623 0.96011 138 -2.00623)" fill="white"/>
+<rect width="16.6682" height="30.7477" transform="matrix(0.99282 -0.119617 0.279623 0.96011 170 -2.00623)" fill="white"/>
+<rect width="16.6682" height="30.7477" transform="matrix(0.99282 -0.119617 0.279623 0.96011 202 -1.00623)" fill="white"/>
+<rect width="16.6682" height="30.7477" transform="matrix(0.99282 -0.119617 0.279623 0.96011 234 -1.00623)" fill="white"/>
+</g>
+<g clip-path="url(#clip1)">
+<rect width="265" height="23" transform="translate(0 25)" fill="white"/>
+<rect y="25" width="265" height="26" fill="black"/>
+<rect width="16.6682" height="36.7368" transform="matrix(0.884461 0.466614 -0.316428 0.948617 21.9618 13.3452)" fill="white"/>
+<rect width="16.6682" height="36.7368" transform="matrix(0.884461 0.466614 -0.316428 0.948617 53.9618 13.3452)" fill="white"/>
+<rect width="16.6682" height="36.7368" transform="matrix(0.884461 0.466614 -0.316428 0.948617 85.9618 13.3452)" fill="white"/>
+<rect width="16.6682" height="36.7368" transform="matrix(0.884461 0.466614 -0.316428 0.948617 117.962 13.3452)" fill="white"/>
+<rect width="16.6682" height="36.7368" transform="matrix(0.884461 0.466614 -0.316428 0.948617 149.962 13.3452)" fill="white"/>
+<rect width="16.6682" height="36.7368" transform="matrix(0.884461 0.466614 -0.316428 0.948617 181.962 13.3452)" fill="white"/>
+<rect width="16.6682" height="36.7368" transform="matrix(0.884461 0.466614 -0.316428 0.948617 213.962 13.3452)" fill="white"/>
+<rect width="16.6682" height="36.7368" transform="matrix(0.884461 0.466614 -0.316428 0.948617 245.625 13)" fill="white"/>
+</g>
+<path d="M0.706604 4.90332L38.6947 1.00002L53.4742 44.2785L15.4862 48.1818L0.706604 4.90332Z" fill="black"/>
+<defs>
+<clipPath id="clip0">
+<rect width="265" height="23" fill="white"/>
+</clipPath>
+<clipPath id="clip1">
+<rect width="265" height="23" fill="white" transform="translate(0 25)"/>
+</clipPath>
+</defs>
+</svg>

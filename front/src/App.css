@@ -12,18 +12,18 @@
 
 .Content-film-short {
   position: relative;
-  animation: App-logo-spin infinite 20s linear;
-  height: 30min;
-  margin-top: 0px;
-  pointer-events: none;
+  width: 320px;
+  height: 414px;
+  left: 0px;
+  top: 10px;
 }
 
 .App-body-short {
   position: relative;
   background-color: white;
   top: 100%;
-  min-height: 50vh;
-  margin-top: 80px; /*header分のマージン*/
+  min-height: 80vh;
+  margin-top: 0px; /*header分のマージン*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,26 +32,23 @@
   color: burlywood;
 }
 
-.logo-return {
-  position: absolute;/*絶対配置*/
-  background-color: black;
-  color:rgb(255, 0, 0);
-  top: 50%;
-  left: 10%;
-  width: 25px;
-  -ms-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-}
-
 .Content-kachinko-open-title{
   position: absolute;/*絶対配置*/
   display: inline;
   color:rgb(255, 255, 255);
-  top: 65%;
+  top: 70%;
   left: 50%;
-  -ms-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+}
+
+.Content-kachinko-close-title{
+  position: absolute;/*絶対配置*/
+  display: inline;
+  color:rgb(255, 255, 255);
+  top: 67%;
+  left: 50%;
   transform: translate(-50%,-50%);
   margin:0;
   padding:0;
@@ -72,166 +69,74 @@
 
 .App-logo1 {
   animation: App-logo-spin infinite 20s linear;
-  height: 43min;
+  width: 265px;
   margin-top: 0px;
   pointer-events: none;
 }
 .App-logo2 {
   animation: App-logo-spin infinite 20s linear;
-  height: 37vmin;
+  width: 265px;
   margin-top: 20px;
   pointer-events: none;
 }
 .App-logo3 {
   animation: App-logo-spin infinite 20s linear;
-  height: 37vmin;
+  width: 265px;
   margin-top: 20px;
   pointer-events: none;
 }
 
 .Header-logo-black{
   background-color: black;
-  position:absolute; top:15px; right:10px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 336px;
+  top: 11px;
   color: white;
 }
 
 .Header-logo-gray{
   background-color: rgb(205, 205, 205);
-  position:absolute; top:15px; right:10px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 336px;
+  top: 11px;
   color: black;
 }
 
-.Footer-unknown-black{
-  background-color: black;
-  position:absolute; bottom:20px; left:40px;
-  display: flex;
-  color: white;
-}
-
-.Footer-unknown-gray{
-  background-color:rgb(205, 205, 205);
-  position:absolute; bottom:20px; left:40px;
-  display: flex;
-  color: black;
-}
-
-.Footer-plane-black {
-  background-color: black;
-  position:absolute; bottom:20px; left: 175px;
-  color: white;
-}
-
-.Footer-plane-gray {
-  background-color: rgb(205, 205, 205);
-  position:absolute; bottom:20px; left: 175px;
-  color: black;
-}
-
-.Footer-gear-black {
-  background-color: black;
-  display: flex;
-  position:absolute; bottom:20px; right:40px;
-  color: white;
-}
-
-.Footer-gear-gray {
-  background-color: rgb(205, 205, 205);
-  display: flex;
-  position:absolute; bottom:20px; right:40px;
-  color: black;
-}
-
-.App-header-black {
-  position: fixed; /* ヘッダーを固定する */
-  top: 0; /* 上部から配置の基準位置を決める */
-  left: 0; /* 左から配置の基準位置を決める */
-  width: 100%; /* ヘッダーの横幅を指定する */
-  height: 60px; /* ヘッダーの高さを指定する */
-  padding: 0px; /* ヘッダー内側の余白を指定する(上下左右) */
-  background-color:black; /* ヘッダーの背景色を指定する */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(8px + 2vmin);
-  color:white; /* ヘッダーのフォントの色を指定する */
-}
-
-.App-header-gray {
-  position: fixed; /* ヘッダーを固定する */
-  top: 0; /* 上部から配置の基準位置を決める */
-  left: 0; /* 左から配置の基準位置を決める */
-  width: 100%; /* ヘッダーの横幅を指定する */
-  height: 60px; /* ヘッダーの高さを指定する */
-  padding: 0px; /* ヘッダー内側の余白を指定する(上下左右) */
-  background-color:rgb(205, 205, 205); /* ヘッダーの背景色を指定する */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(8px + 2vmin);
-  color:black; /* ヘッダーのフォントの色を指定する */
-}
 
 .App-body {
+  position: relative;
+  z-index: 0;
   background-color: white;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: burlywood;
-}
-
-.App-footer-black {
-  position: fixed; /* フッターを固定する */
-  bottom: 0; /* 上部から配置の基準位置を決める */
-  left: 0; /* 左から配置の基準位置を決める */
-  width: 100%; /* フッターの横幅を指定する */
-  height: 60px; /* フッターの高さを指定する */
-  padding: 0px; /* フッター内側の余白を指定する(上下左右) */
-  background-color: black; /* フッターの背景色を指定する */
-  color: #FFFFFF; /* フッターのフォントの色を指定する */
-}
-
-.App-footer-gray {
-  position: fixed; /* フッターを固定する */
-  bottom: 0; /* 上部から配置の基準位置を決める */
-  left: 0; /* 左から配置の基準位置を決める */
-  width: 100%; /* フッターの横幅を指定する */
-  height: 60px; /* フッターの高さを指定する */
-  padding: 0px; /* フッター内側の余白を指定する(上下左右) */
-  background-color: rgb(205, 205, 205); /* フッターの背景色を指定する */
-  color: black; /* フッターのフォントの色を指定する */
-}
-
-.Button {
-  position: relative;
-  display: inline-block;
-  padding: 0px;
-  margin: 0px;
-  height: 40px;
-  top: 0px;
+  top: 60px;
+  color: white;
 }
 
 .Left-Button {
   position: relative;
   padding-right: 10px;
   margin: 0px;
-  top: 5px;
+  top: 25px;
   border: "none";
 }
 
 .Center-Button {
   position: relative;
-  top: 5px;
+  top: 25px;
 }
 
 .Right-Button {
   position: relative;
   padding-left: 10px;
-  top: 5px;
+  top: 25px;
 }
 
 .Content4-Left-Button {
@@ -250,7 +155,7 @@
 
 .Send-Button {
   position: relative;
-  top: 15px;
+  top: 80px;
 }
 
 .Long-Button {
@@ -264,15 +169,62 @@
   border-radius: 23px;
 }
 
-/*
-.App-link {
-  color: #61dafb;
-}//@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Button {
+  position: relative;
+  padding: 0px;
+  margin: 0px;
+  height: 0px;
+  top: 0px;
 }
-*/
+
+.btn-square-left {
+  position: relative;
+  left: 0px;
+  margin-right: 14px;
+  background: #000000;/*ボタン色*/
+  color: #FFF;
+  border-radius: 24px;
+  width: 109px;
+  height: 37px;
+  font-size: 18px;
+  line-height: 21px;
+  top: 3px;
+}
+
+.btn-square-center {
+  position: relative;
+  left: 0px;
+  text-decoration: none;
+  background: #000000;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 0px #627295;
+  border-radius: 24px;
+  width: 109px;
+  height: 37px;
+  font-size: 18px;
+  line-height: 21px;
+  top: 3px;
+}
+
+.btn-square-right {
+  position: relative;
+  left: 0px;
+  margin-left: 14px;
+  text-decoration: none;
+  background: #000000;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 0px #627295;
+  border-radius: 24px;
+  width: 109px;
+  height: 37px;
+  font-size: 18px;
+  line-height: 21px;
+  top: 3px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+}
+
+.btn-square-right:hover {
+  background-color: #9ec34b;
+  border-color: #cbe585;
+  color: #FFF;
+}
