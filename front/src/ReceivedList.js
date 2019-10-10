@@ -50,6 +50,7 @@ class ReceivedList extends React.Component {
     }
 
     render() {
+        
         return (
             <div>
                 <Header title="受信一覧" MyPageLogo={true}/>
@@ -59,6 +60,7 @@ class ReceivedList extends React.Component {
                     {this.state.map(review =>(
                         <>
                         {/*<Route exact path='/ReceivedBox' render={() => <ReceivedBox/>} />*/}
+                        
                         <Link to="/ReceivedBox">
                             <div className="Content-kachinko">
                                 <DisplayKachinko review={review} />
