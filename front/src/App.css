@@ -32,22 +32,22 @@
   color: burlywood;
 }
 
-.Content-kachinko-open-title{
+.kachinko-open-title{
   position: absolute;/*絶対配置*/
   display: inline;
   color:rgb(255, 255, 255);
-  top: 70%;
+  top: 68.5%;
   left: 50%;
   transform: translate(-50%,-50%);
   margin:0;
   padding:0;
 }
 
-.Content-kachinko-close-title{
+.kachinko-close-title{
   position: absolute;/*絶対配置*/
   display: inline;
   color:rgb(255, 255, 255);
-  top: 67%;
+  top: 69%;
   left: 50%;
   transform: translate(-50%,-50%);
   margin:0;
@@ -189,6 +189,8 @@
   font-size: 18px;
   line-height: 21px;
   top: 3px;
+  z-index: 2;
+
 }
 
 .btn-square-center {
@@ -204,6 +206,8 @@
   font-size: 18px;
   line-height: 21px;
   top: 3px;
+  z-index: 2;
+
 }
 
 .btn-square-right {
@@ -221,6 +225,7 @@
   line-height: 21px;
   top: 3px;
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  z-index: 2;
 }
 
 .btn-square-right:hover {

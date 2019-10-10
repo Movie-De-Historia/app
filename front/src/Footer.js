@@ -17,7 +17,7 @@ function Footer(props) {
 
     return (
         <footer className={"App-footer-" + DisplayColor}>
-            <Link to='/ReceivedList'> <img src={unknown} className={"Footer-unknown-" + DisplayColor} alt="logo" /></Link>
+            <Link to='/HistoryList'> <img src={unknown} className={"Footer-unknown-" + DisplayColor} alt="logo" /></Link>
             <Link to='/OutBox'><img src={plane} className={"Footer-plane-" + DisplayColor} alt="logo" /></Link>
             <Link to='/Setting'><img src={gear} className={"Footer-gear-" + DisplayColor} alt="logo" /></Link>
         </footer>
