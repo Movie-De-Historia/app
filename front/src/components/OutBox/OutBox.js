@@ -1,12 +1,11 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import './OutBox.css';
 
-import Form from './Form'
+import Form from '../Form/Form'
 
 function OutBox() {
-    const title = "OutBox";
 
     return (
         <>

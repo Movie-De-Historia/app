@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import history_list from './HistoryList.svg';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import history_list from '../../image/HistoryList.svg';
 import './HistoryList.css';
 
 function HistoryList() {
