@@ -1,10 +1,9 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import image_film from './image_film_short.svg';
-import logo_botton from './logo_botton.svg';
-import send_botton from './send_botton.svg';
+import image_film from './image/image_film_short.svg';
 import { Link } from 'react-router-dom';
+import { useMovieComments } from "./modules/movieCommentsModule";
 
 class ReceivedBox extends React.Component {
     constructor(props) {
@@ -15,7 +14,6 @@ class ReceivedBox extends React.Component {
                     };
 
         this.handleClickLike = this.handleClickLike.bind(this);
-        {/*console.log(this.props.state);*/}
     }
 
     handleClickLike(event) {

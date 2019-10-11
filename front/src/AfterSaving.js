@@ -1,11 +1,17 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import image_film from './image_film_short.svg';
-import logo_button from './logo_botton.svg';
-import send_button from './send_botton.svg';
+import { useSelector, useDispatch } from "react-redux";
+import { useMovieComments } from "./modules/movieCommentsModule";
+import image_film from './image/image_film_short.svg';
+import send_button from './image/send_botton.svg';
 
 function AfterSaving() {
+    const test = useMovieComments();
+    // let test2 = useSelector(state => state);
+    console.log("AfterSaving");
+    console.log(test);
+
     return (
         <>
         <Header displayLogoReturn={false} LifeTime={true} MyPageLogo={true} title="受信箱"/>

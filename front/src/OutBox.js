@@ -6,7 +6,6 @@ import './OutBox.css';
 import Form from './Form'
 
 function OutBox() {
-    const title = "OutBox";
 
     return (
         <>

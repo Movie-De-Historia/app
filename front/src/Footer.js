@@ -1,7 +1,7 @@
 import React from 'react';
-import unknown from './footer_unknown.svg'
-import plane from './footer_plane.svg'
-import gear from './footer_gear.svg'
+import unknown from './image/footer_unknown.svg'
+import plane from './image/footer_plane.svg'
+import gear from './image/footer_gear.svg'
 import { Link } from 'react-router-dom'
 import './Footer.css';
 
