@@ -2,7 +2,7 @@ import { createSlice } from "redux-starter-kit";
 import { useSelector } from "react-redux";
 
 const movieCommentsInitialState = {
-    nextTodoId: 0,
+    selectedCommentId: 0,
 
     list: [
         {
@@ -49,6 +49,13 @@ const movieCommentsModule = createSlice({
                     comment.id === id ? !comment.isLikeState : comment.isLikeState;
             });
         },
+
+        setSelectedId: (state, action) => {
+            const id = action.payload;
+            console.log("setSelectedId, reducer")
+            state.selectedCommentId = id;
+        },
+
         // add: (state, action) => {(state+1)},
     }
 });

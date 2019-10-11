@@ -1,11 +1,12 @@
-import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import kachinko_open from './image/kachinko_large_open.svg';
-import kachinko_close from './image/kachinko_large_close.svg';
-import { Link } from 'react-router-dom';
-import { useMovieComments } from "./modules/movieCommentsModule";
-
+import React from "react";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import kachinko_open from "../../image/kachinko_large_open.svg";
+import kachinko_close from "../../image/kachinko_large_close.svg";
+// import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useMovieComments } from "../../modules/movieCommentsModule";
+import movieCommentsModule from "../../modules/movieCommentsModule";
 
 // class ReceivedList extends React.Component {
 //     constructor(props) {
@@ -72,21 +73,41 @@ import { useMovieComments } from "./modules/movieCommentsModule";
 //     }
 // }
 
-function ReceivedList() {
+// reduxを導入したので関数版で書き直した．しばらく問題なければ上のクラスは消す予定
+// 途中コンソールで出力したかったので，一部関係ないのが入ってます（後で消す）
+function ReceivedList() {;
+
     const state = useMovieComments().list;
-    console.log(state);
+    const state2 = useMovieComments;
+    console.log(useMovieComments());
+
+    const dispatch = useDispatch();
+    const setSelectedId = (id) => {
+        // console.log(movieCommentsModule.actions)
+        console.log(id+1);
+        dispatch(movieCommentsModule.actions.setSelectedId(id+1));
+
+        console.log("-------------------");
+        console.log(state2);
+    }
 
     return (
         <div>
             <Header title="受信一覧" MyPageLogo={true}/>
             <Footer/>
             <div className="App-body">
-                {state.map(review =>(
-                    <Link to="/ReceivedBox">
+                {state.map((review, index) =>(
+                    // <Link to="/ReceivedBox">
+                    //     <div className="Content-kachinko">
+                    //         <DisplayKachinko review={review} />
+                    //     </div>
+                    // </Link>
+                    <a key={index} href="/ReceivedBox" onClick={() => {setSelectedId(index)}}>
+                    {/* <a key={index} href="/ReceivedList" onClick={() => {setSelectedId(index)}}> */}
                         <div className="Content-kachinko">
                             <DisplayKachinko review={review} />
                         </div>
-                    </Link>
+                    </a>
                 ))}
             </div>
         </div>
@@ -94,9 +115,6 @@ function ReceivedList() {
 }
 
 class DisplayKachinko extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         const review = this.props.review;
@@ -108,11 +126,9 @@ class DisplayKachinko extends React.Component {
             <>
                 <img src={kachinkoType} className={className1} alt="kachinko-logo" />
                 <p className={className2}>
-                    <h3>
-                        {review.title}<br/>
-                        {review.genre}<br/>
-                        {review.onePhrase}<br/>
-                    </h3>
+                    {review.title}<br/>
+                    {review.genre}<br/>
+                    {review.onePhrase}<br/>
                 </p>
             </>
         );

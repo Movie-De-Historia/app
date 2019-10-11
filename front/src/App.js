@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
-import ReceivedList from './ReceivedList';
-import ReceivedBox from './ReceivedBox';
-import OutBox from './OutBox';
-import AfterSaving from './AfterSaving';
-import MyPage from './MyPage';
-import Setting from './Setting';
-import HistoryList from './HistoryList';
-import SentList from './SentList';
+import ReceivedList from './components/ReceivedList/ReceivedList';
+import ReceivedBox from './components/ReceivedBox/ReceivedBox';
+import OutBox from './components/OutBox/OutBox';
+import AfterSaving from './components/AfterSaving/AfterSaving';
+import MyPage from './components/MyPage/MyPage';
+import SettingDisplay from './components/SettingDisplay/SettingDisplay';
+import HistoryList from './components/HistoryList/HistoryList';
+import SentList from './components/SentList/SentList';
 import './App.css';
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
           <Route exact path='/OutBox' component={OutBox} />
           <Route exact path='/AfterSaving' component={AfterSaving} />
           <Route exact path='/MyPage' component={MyPage} />
-          <Route exact path='/Setting' component={Setting} />
+          <Route exact path='/SettingDisplay' component={SettingDisplay} />
           <Route exact path='/HistoryList' component={HistoryList} />
           <Route exact path='/SentList' component={SentList} />
         </>

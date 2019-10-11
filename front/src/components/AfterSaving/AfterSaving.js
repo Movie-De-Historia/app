@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import { useSelector, useDispatch } from "react-redux";
-import { useMovieComments } from "./modules/movieCommentsModule";
-import image_film from './image/image_film_short.svg';
-import send_button from './image/send_botton.svg';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+// import { useSelector, useDispatch } from "react-redux";
+import { useMovieComments } from "../../modules/movieCommentsModule";
+import image_film from '../../image/image_film_short.svg';
+import send_button from '../../image/send_botton.svg';
 
 function AfterSaving() {
     const test = useMovieComments();
@@ -15,9 +15,9 @@ function AfterSaving() {
     return (
         <>
         <Header displayLogoReturn={false} LifeTime={true} MyPageLogo={true} title="受信箱"/>
-        <Footer/>
+        <Footer displayColor />
             
-            <body className="App-body">
+            <div className="App-body">
                 <div>
                     <img src={image_film} className="Content-film-short" alt="logo" /> 
                 </div>
@@ -31,7 +31,7 @@ function AfterSaving() {
                 <div>
                     <img src={send_button} className="Send-Button" alt="logo" />
                 </div>
-            </body>
+            </div>
         </>
     );
 }
