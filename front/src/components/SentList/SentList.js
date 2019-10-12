@@ -5,8 +5,8 @@ import Footer from '../Footer/Footer';
 function SentList() {
     return (
         <>
-        <Header displayLogoReturn={true} title="送信済み一覧"/>
-        <Footer/>
+            <Header displayLogoReturn={true} title="送信済み一覧"/>
+            <Footer/>
         </>
     );
 }
