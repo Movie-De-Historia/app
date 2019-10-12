@@ -3,6 +3,7 @@ import Header from '../../Header';
 import Footer from '../../Footer';
 import image_film from './image_film.svg';
 
+//この画面は現在使用していないため，後で削除する予定です
 function Content2() {
     const title = "Content2";
     

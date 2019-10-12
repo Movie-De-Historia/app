@@ -6,6 +6,7 @@ import logo_botton from './logo_botton.svg';
 import send_botton from './send_botton.svg';
 import { Link } from 'react-router-dom'
 
+// この画面は現在使っていないので後々削除予定
 function Content4() {
     const title = "Content4";
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-// import { useSelector, useDispatch } from "react-redux";
 import { useMovieComments } from "../../modules/movieCommentsModule";
 import image_film from '../../image/image_film_short.svg';
 import send_button from '../../image/send_botton.svg';
@@ -13,7 +12,7 @@ function AfterSaving() {
     console.log(test);
 
     return (
-        <>
+        <div>
         <Header displayLogoReturn={false} LifeTime={true} MyPageLogo={true} title="受信箱"/>
         <Footer displayColor />
             
@@ -32,7 +31,7 @@ function AfterSaving() {
                     <img src={send_button} className="Send-Button" alt="logo" />
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

@@ -5,7 +5,6 @@ import gear from '../../image/footer_gear.svg'
 import { Link } from 'react-router-dom'
 import './Footer.css';
 
-
 function Footer(props) {
     let DisplayColor;
     

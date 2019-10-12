@@ -135,5 +135,4 @@ class DisplayKachinko extends React.Component {
     }
 }
 
-
 export default ReceivedList;

@@ -63,4 +63,3 @@ const movieCommentsModule = createSlice({
 export const useMovieComments = () => {return useSelector(state => state);};
 
 export default movieCommentsModule;
-
