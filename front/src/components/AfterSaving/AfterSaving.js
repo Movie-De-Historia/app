@@ -1,18 +1,14 @@
 import React from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import { useMovieComments } from "../../modules/movieCommentsModule";
 import image_film from '../../image/image_film_short.svg';
 import send_button from '../../image/send_botton.svg';
+import './AfterSaving.css';
 
 function AfterSaving() {
-    const test = useMovieComments();
-    // let test2 = useSelector(state => state);
-    console.log("AfterSaving");
-    console.log(test);
 
     return (
-        <div>
+        <>
         <Header displayLogoReturn={false} LifeTime={true} MyPageLogo={true} title="受信箱"/>
         <Footer displayColor />
             
@@ -27,11 +23,16 @@ function AfterSaving() {
                     <button className="btn-square-right">報告</button>
                 </div>
                 
-                <div>
+                {/* <div>
                     <img src={send_button} className="Send-Button" alt="logo" />
-                </div>
+                </div> */}
+
+                <form className="messageInput">
+                    <input className="messageText" type="text" placeholder="メッセージを入力" defaultValue="" /><br/>
+                    <button className="submitButton" type="submit">投稿</button>
+                </form>
             </div>
-        </div>
+        </>
     );
 }
 
