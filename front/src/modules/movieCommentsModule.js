@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 const movieCommentsInitialState = {
     selectedCommentId: 0,
 
+    messageInput: [],
+
     list: [
         {
             id: 1,
@@ -42,6 +44,7 @@ const movieCommentsModule = createSlice({
     slice: "movieComments",
     initialState: movieCommentsInitialState,
     reducers: {
+        // いいねの状態を変更する
         changeLikeState: (state, action) => {
             const id = action.payload;  
             state.list.forEach(comment => {
@@ -50,16 +53,23 @@ const movieCommentsModule = createSlice({
             });
         },
 
+        // どのカチンコが選択されたかをIDで記憶する
         setSelectedId: (state, action) => {
             const id = action.payload;
-            console.log("setSelectedId, reducer")
             state.selectedCommentId = id;
         },
 
-        // add: (state, action) => {(state+1)},
+        // ユーザ（あるいはトークン）と一緒にメッセージ内容を保存する
+        saveMessageInput: (state, action) => {
+            const text = action.payload;
+            // token(or User)はとりあえず固定（後で変更する）
+            const token = "9y7DyLFXQqVFsESjPNSBV9fq";
+            state.messageInput.push({ token: {token}, text: {text} });
+        },
     }
 });
 
+// stateの中身を確認するために使用している（後で変更する）
 export const useMovieComments = () => {return useSelector(state => state);};
 
 export default movieCommentsModule;
