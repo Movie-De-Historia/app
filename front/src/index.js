@@ -5,12 +5,15 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from "react-redux";
 import { setupStore } from "./store";
+import { StylesProvider } from '@material-ui/styles';
 
 const store = setupStore();
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <StylesProvider injectFirst>
+            <App />
+        </StylesProvider>
     </Provider>,
     document.getElementById('root')
 );

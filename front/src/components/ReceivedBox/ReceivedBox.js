@@ -1,97 +1,89 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import image_film from '../../image/image_film_short.svg';
 import { Link } from 'react-router-dom';
-import { useDispatch } from "react-redux";
-import { useMovieComments } from "../../modules/movieCommentsModule";
+// import { useDispatch } from "react-redux";
+// import { useMovieComments } from "../../modules/movieCommentsModule";
+import './ReceivedBox.scss'
+import { makeStyles } from '@material-ui/core/styles';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import SaveAltIcon from '@material-ui/icons/SaveAlt';
+import ReportIcon from '@material-ui/icons/Report';
+import Fab from '@material-ui/core/Fab';
 
-// class版（正常に動作するがreduxのhookは使えないので後々関数に変更する）
-class ReceivedBox extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-                        isLikeState: false,
-                        likeCount: 0,
-                    };
-
-        this.handleClickLike = this.handleClickLike.bind(this);
-    }
-
-    handleClickLike(event) {
-        this.setState(prevState => ({
-            isLikeState: !prevState.isLikeState,
-        }));
-        console.log(this.state.isLikeState);
-    }
+const useStyles = makeStyles(theme => ({
+    button:{
+        width: "21px",
+        marginRight: theme.spacing(1),
+        '&:hover': {
+            background: 'black'
+        }
+    },
     
-    render() {
-        return (
-            <>
-            <Header displayLogoReturn={true} MyPageLogo={true} title="受信箱"/>
-            <Footer/>
-                
-                <body className="App-body">
-                    <div>
-                        <img src={image_film} className="Content-film-short" alt="logo" />
-                    </div>
+    like: ({ likeState }) => ({
+        width: "16px",
+        color: likeState ? "red" : "white",
+        marginRight: theme.spacing(1),
+        '&:hover': {
+            background: 'black'
+        }
+    }),
 
-                    <div className="Button">
-                        <button onClick={this.handleClickLike} className="btn-square-left">
-                            { this.state.isLikeState? "いいね💕" : "いいね" }
-                        </button>
-                        <Link to="AfterSaving">
-                            <button href="AfterSaving" className="btn-square-center">保存</button>
-                        </Link>
-                        <button className="btn-square-right">報告</button>
-                    </div>
-                </body>
-            </>
-        );
-    }
-}
+    save: ({ saveState }) => ({
+        width: "21px",
+        color: saveState ? "#33cc30" : "white",
+        marginRight: theme.spacing(1),
+        '&:hover': {
+            background: 'black'
+        }
+    }),
 
-// 関数版（reduxのデータの更新がまだできていない，データの永続化orバックエンドの目処が立てばこちらに変更予定ßß）
-// const handleClickLike = (event) => {
-//     this.setState(prevState => ({
-//         isLikeState: !prevState.isLikeState,
-//     }));
-//     console.log(this.state.isLikeState);
-// }
+    background: {
+        color: "white",
+        width: "100px",
+        height: "37px",
+        backgroundColor: "black",
+        '&:hover': {
+            background: 'black'
+        }
+    },
+}));
 
-// function ReceivedBox() {
-//     const state = { isLikeState: false, likeCount: 0, };
+function ReceivedBox() {
+    const [likeState, setLikeState] = useState(false);
+    const [saveState, setSaveState] = useState(false);
+    const classes = useStyles({ likeState, saveState });
 
-//     const state2 = useMovieComments();
-//     console.log(state2);
-
-//     const dispatch = useDispatch();
-//     const changeLikeState = (id) => {
-//         dispatch(useMovieComments.actions.changeLikeState(id));
-//     }
-    
-//     return (
-//         <>
-//         <Header displayLogoReturn={true} MyPageLogo={true} title="受信箱"/>
-//         <Footer/>
+    return (
+        <>
+        <Header displayLogoReturn={true} MyPageLogo={true} title="受信箱"/>
+        <Footer/>
             
-//             <div className="App-body">
-//                 <div>
-//                     <img src={image_film} className="Content-film-short" alt="logo" />
-//                 </div>
+        <div className="App-body">
+            <img src={image_film} className="film-short" alt="logo" />
 
-//                 <div className="Button">
-//                     <button onClick={handleClickLike} className="btn-square-left">
-//                         { state.isLikeState? "いいね♡" : "いいね" }
-//                     </button>
-//                     <Link to="AfterSaving">
-//                         <button href="AfterSaving" className="btn-square-center">保存</button>
-//                     </Link>
-//                     <button className="btn-square-right">報告</button>
-//                 </div>
-//             </div>
-//         </>
-//     );
-// };
+            <div className="buttonList">
+                <Fab variant="extended" className={classes.background} onClick={() => setLikeState(!likeState)} >
+                    <FavoriteIcon className={classes.like}/>
+                    いいね
+                </Fab>
+
+                <Link to="AfterSaving" className="Link">
+                    <Fab variant="extended" className={classes.background} onClick={() => setSaveState(!saveState)}>
+                        <SaveAltIcon className={classes.save}/>
+                        保存
+                    </Fab>
+                </Link>
+
+                <Fab variant="extended" className={classes.background}>
+                    <ReportIcon className={classes.button}/>
+                    報告
+                </Fab>
+            </div>
+        </div>
+        </>
+    );
+};
 
 export default ReceivedBox;
