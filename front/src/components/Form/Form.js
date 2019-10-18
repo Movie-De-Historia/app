@@ -46,7 +46,6 @@ function Form () {
             <textarea className="textareaOnef" name="onef" placeholder="ひとこと" defaultValue=""></textarea>
             <textarea className="textareaDesc" name="desc" placeholder="本文" defaultValue=""></textarea>
             <Fab variant="extended" type="submit" className={ classes.background }>
-                {/* <PublishIcon className={classes.button}/> */}
                 送信
             </Fab>            
         </form>

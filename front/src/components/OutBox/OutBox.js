@@ -12,8 +12,6 @@ function OutBox() {
             <Header displayLogoReturn={true} title="送信箱"/>
             <Footer/>    
             <Form />
-            {/* <div className="styleForm"> */}
-            {/* </div> */}
         </>
     );
 }

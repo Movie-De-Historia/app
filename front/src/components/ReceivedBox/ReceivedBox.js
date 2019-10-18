@@ -3,8 +3,6 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import image_film from '../../image/image_film_short.svg';
 import { Link } from 'react-router-dom';
-// import { useDispatch } from "react-redux";
-// import { useMovieComments } from "../../modules/movieCommentsModule";
 import './ReceivedBox.scss'
 import { makeStyles } from '@material-ui/core/styles';
 import FavoriteIcon from '@material-ui/icons/Favorite';
