@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_04_095835) do
+ActiveRecord::Schema.define(version: 2019_10_22_021620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(version: 2019_10_04_095835) do
     t.datetime "updated_at", null: false
     t.index ["review_id"], name: "index_logs_on_review_id"
     t.index ["user_id"], name: "index_logs_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.bigint "review_id"
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["review_id"], name: "index_messages_on_review_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -57,6 +65,7 @@ ActiveRecord::Schema.define(version: 2019_10_04_095835) do
 
   add_foreign_key "logs", "reviews"
   add_foreign_key "logs", "users"
+  add_foreign_key "messages", "reviews"
   add_foreign_key "reviews", "genres"
   add_foreign_key "reviews", "users"
 end
