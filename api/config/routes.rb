@@ -16,6 +16,5 @@ Rails.application.routes.draw do
   put '/users', to: 'users#update'
   delete '/users', to: 'users#destroy'
   
-  resources :users
 end
 

@@ -1,5 +1,5 @@
 class LogsController < ApplicationController
-	before_action :set_log, only: [:show]
+  before_action :set_log, only: [:show]
 
   def index
     @logs = Log.all
@@ -8,7 +8,7 @@ class LogsController < ApplicationController
   end
 
   def show
-      render json: @log
+    render json: @log
   end
 
   def create
