@@ -11,9 +11,7 @@ function OutBox() {
         <>
             <Header displayLogoReturn={true} title="送信箱"/>
             <Footer/>    
-            <body className="App-body-short">
-                <Form />
-            </body>
+            <Form />
         </>
     );
 }

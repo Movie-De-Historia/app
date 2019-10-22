@@ -38,6 +38,8 @@
     height: 31.71px;
     left: 13px;
     top: 8px;
+    margin: 0px;
+    padding: 0px;
 }
 
 .test {
@@ -55,4 +57,6 @@
 .LifeTime {
     color: rgb(255, 255, 255);
     font-size: 24px;
+    margin: 0px;
+    padding: 0px;
 }
