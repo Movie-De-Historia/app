@@ -1,0 +1,59 @@
+.App-body1{
+    position: relative;
+    z-index: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    margin: 0px;
+    padding: 0px;
+    top: 32px;
+    height: 580px;
+    color: white;
+}
+
+.film-short {
+    position: relative;
+    width: 320px;
+    height: 424px;
+    left: 0px;
+    top: 0px;
+}
+
+.buttonList{
+    width: 330px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.messageInput {
+    position: relative;
+    left: 0px;
+    top: 18px;
+    height: 50px;
+    width: 100%;
+}
+
+.messageText {
+    position: absolute;
+    left: 24px;
+    top: 0px;
+    width: 235px;
+    height: 32px;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 16px;
+    border: solid 4px black;
+    color: #000000;
+    border-radius: 0px;
+}

@@ -1,0 +1,36 @@
+.App-body {
+    position: relative;
+    z-index: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    top: 60px;
+    color: white;
+}
+
+.film-short {
+    position: relative;
+    width: 320px;
+    height: 424px;
+    left: 0px;
+    top: 0px;
+}
+
+.buttonList{
+    width: 330px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.Link {
+    text-decoration: none;
+}

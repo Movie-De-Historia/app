@@ -1,33 +1,156 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.Content-kachinko {
+    position: relative;
+    animation: App-logo-spin infinite 20s linear;
+    height: 43min;
+    margin-top: 0px;
+    pointer-events: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App-body-short {
+    position: relative;
+    background-color: white;
+    top: 100%;
+    min-height: 80vh;
+    margin-top: 0px; /*header分のマージン*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: burlywood;
 }
 
-.App-link {
-  color: #61dafb;
+.kachinko-open-title{
+    position: absolute;/*絶対配置*/
+    display: inline;
+    color:rgb(255, 255, 255);
+    top: 68.5%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.kachinko-close-title{
+    position: absolute;/*絶対配置*/
+    display: inline;
+    color:rgb(255, 255, 255);
+    top: 69%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+}
+
+.Left-Botton-moji{
+    position: absolute;/*絶対配置*/
+    display: inline;
+    color:rgb(255, 0, 0);
+    top: 65%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+}
+
+.App-logo1 {
+    animation: App-logo-spin infinite 20s linear;
+    width: 265px;
+    margin-top: 0px;
+    pointer-events: none;
+}
+.App-logo2 {
+    animation: App-logo-spin infinite 20s linear;
+    width: 265px;
+    margin-top: 20px;
+    pointer-events: none;
+}
+.App-logo3 {
+    animation: App-logo-spin infinite 20s linear;
+    width: 265px;
+    margin-top: 20px;
+    pointer-events: none;
+}
+
+.Header-logo-black{
+    background-color: black;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 336px;
+    top: 11px;
+    color: white;
+}
+
+.Header-logo-gray{
+    background-color: rgb(205, 205, 205);
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 336px;
+    top: 11px;
+    color: black;
+}
+
+.Left-Button {
+    position: relative;
+    padding-right: 10px;
+    margin: 0px;
+    top: 25px;
+    border: "none";
+}
+
+.Center-Button {
+    position: relative;
+    top: 25px;
+}
+
+.Right-Button {
+    position: relative;
+    padding-left: 10px;
+    top: 25px;
+}
+
+.Content4-Left-Button {
+    position: relative;
+    padding-right: 28px;
+    top: 5px;
+    width: 110px;
+}
+
+.Content4-Right-Button {
+    position: relative;
+    padding-left: 28px;
+    top: 5px;
+    width: 110px;
+}
+
+.Send-Button {
+    position: relative;
+    top: 80px;
+}
+
+.Long-Button {
+    width: 327px;
+    height: 37px;
+    left: 24px;
+    top: 550px;
+
+    margin-top: 20px;
+    background: #000000;
+    border-radius: 23px;
+}
+
+.Button {
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    height: 0px;
+    top: 0px;
 }

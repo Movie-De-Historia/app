@@ -1,0 +1,112 @@
+<svg width="321" height="471" viewBox="0 0 321 471" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="320" height="471" fill="black"/>
+<rect x="1" width="320" height="471" fill="black"/>
+<rect width="25" height="42" transform="translate(289 186)" fill="white"/>
+<rect width="25" height="42" transform="translate(289 245)" fill="white"/>
+<g clip-path="url(#clip0)">
+<rect width="25" height="42" transform="translate(289 304)" fill="white"/>
+<rect width="25" height="42" transform="translate(289 305)" fill="white"/>
+</g>
+<g clip-path="url(#clip1)">
+<rect width="25" height="42" transform="translate(289 363)" fill="white"/>
+<rect width="25" height="42" transform="translate(289 364)" fill="white"/>
+</g>
+<g clip-path="url(#clip2)">
+<rect width="25" height="42" transform="translate(289 422)" fill="white"/>
+<rect width="25" height="42" transform="translate(289 423)" fill="white"/>
+<g clip-path="url(#clip3)">
+<rect width="25" height="42" transform="translate(289 423)" fill="white"/>
+<rect width="25" height="42" transform="translate(289 424)" fill="white"/>
+</g>
+<g clip-path="url(#clip4)">
+<rect width="25" height="42" transform="translate(289 424)" fill="white"/>
+<rect width="25" height="42" transform="translate(289 425)" fill="white"/>
+</g>
+</g>
+<rect width="245" height="269" transform="translate(37 173)" fill="white"/>
+<rect width="245" height="117" transform="translate(37 26)" fill="white"/>
+<rect width="25" height="42" transform="translate(289 9)" fill="white"/>
+<rect width="25" height="42" transform="translate(289 127)" fill="white"/>
+<g clip-path="url(#clip5)">
+<rect width="25" height="42" transform="translate(289 68)" fill="white"/>
+<g clip-path="url(#clip6)">
+<rect width="25" height="42" transform="translate(289 69)" fill="white"/>
+<rect width="25" height="42" transform="translate(289 70)" fill="white"/>
+</g>
+</g>
+<rect width="25" height="42" transform="translate(6 186)" fill="white"/>
+<rect width="25" height="42" transform="translate(6 245)" fill="white"/>
+<g clip-path="url(#clip7)">
+<rect width="25" height="42" transform="translate(6 304)" fill="white"/>
+<rect width="25" height="42" transform="translate(6 305)" fill="white"/>
+</g>
+<g clip-path="url(#clip8)">
+<rect width="25" height="42" transform="translate(6 363)" fill="white"/>
+<rect width="25" height="42" transform="translate(6 364)" fill="white"/>
+</g>
+<g clip-path="url(#clip9)">
+<rect width="25" height="42" transform="translate(6 422)" fill="white"/>
+<rect width="25" height="42" transform="translate(6 423)" fill="white"/>
+<g clip-path="url(#clip10)">
+<rect width="25" height="42" transform="translate(6 423)" fill="white"/>
+<rect width="25" height="42" transform="translate(6 424)" fill="white"/>
+</g>
+<g clip-path="url(#clip11)">
+<rect width="25" height="42" transform="translate(6 424)" fill="white"/>
+<rect width="25" height="42" transform="translate(6 425)" fill="white"/>
+</g>
+</g>
+<rect width="25" height="42" transform="translate(6 9)" fill="white"/>
+<rect width="25" height="42" transform="translate(6 127)" fill="white"/>
+<g clip-path="url(#clip12)">
+<rect width="25" height="42" transform="translate(6 68)" fill="white"/>
+<g clip-path="url(#clip13)">
+<rect width="25" height="42" transform="translate(6 69)" fill="white"/>
+<rect width="25" height="42" transform="translate(6 70)" fill="white"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="25" height="42" fill="white" transform="translate(289 304)"/>
+</clipPath>
+<clipPath id="clip1">
+<rect width="25" height="42" fill="white" transform="translate(289 363)"/>
+</clipPath>
+<clipPath id="clip2">
+<rect width="25" height="42" fill="white" transform="translate(289 422)"/>
+</clipPath>
+<clipPath id="clip3">
+<rect width="25" height="42" fill="white" transform="translate(289 423)"/>
+</clipPath>
+<clipPath id="clip4">
+<rect width="25" height="42" fill="white" transform="translate(289 424)"/>
+</clipPath>
+<clipPath id="clip5">
+<rect width="25" height="42" fill="white" transform="translate(289 68)"/>
+</clipPath>
+<clipPath id="clip6">
+<rect width="25" height="42" fill="white" transform="translate(289 69)"/>
+</clipPath>
+<clipPath id="clip7">
+<rect width="25" height="42" fill="white" transform="translate(6 304)"/>
+</clipPath>
+<clipPath id="clip8">
+<rect width="25" height="42" fill="white" transform="translate(6 363)"/>
+</clipPath>
+<clipPath id="clip9">
+<rect width="25" height="42" fill="white" transform="translate(6 422)"/>
+</clipPath>
+<clipPath id="clip10">
+<rect width="25" height="42" fill="white" transform="translate(6 423)"/>
+</clipPath>
+<clipPath id="clip11">
+<rect width="25" height="42" fill="white" transform="translate(6 424)"/>
+</clipPath>
+<clipPath id="clip12">
+<rect width="25" height="42" fill="white" transform="translate(6 68)"/>
+</clipPath>
+<clipPath id="clip13">
+<rect width="25" height="42" fill="white" transform="translate(6 69)"/>
+</clipPath>
+</defs>
+</svg>
