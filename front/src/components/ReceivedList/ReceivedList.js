@@ -39,25 +39,21 @@ function ReceivedList() {;
     );
 }
 
-class DisplayKachinko extends React.Component {
+const DisplayKachinko = ({review}) => {
+    const kachinkoType = (review.id===1) ? kachinko_open : kachinko_close;
+    const className1 = "App-logo" + review.id;
+    const className2 = (review.id===1) ? "kachinko-open-title" : "kachinko-close-title";
 
-    render() {
-        const review = this.props.review;
-        const kachinkoType = (review.id===1) ? kachinko_open : kachinko_close;
-        const className1 = "App-logo" + review.id;
-        const className2 = (review.id===1) ? "kachinko-open-title" : "kachinko-close-title";
-
-        return(
-            <>
-                <img src={kachinkoType} className={className1} alt="kachinko-logo" />
-                <p className={className2}>
-                    {review.title}<br/>
-                    {review.genre}<br/>
-                    {review.onePhrase}<br/>
-                </p>
-            </>
-        );
-    }
+    return(
+        <>
+            <img src={kachinkoType} className={className1} alt="kachinko-logo" />
+            <p className={className2}>
+                {review.title}<br/>
+                {review.genre}<br/>
+                {review.onePhrase}<br/>
+            </p>
+        </>
+    );
 }
 
 export default ReceivedList;
