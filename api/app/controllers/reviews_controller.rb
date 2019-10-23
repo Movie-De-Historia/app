@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: [ :destroy, :update]
-  skip_before_action :authenticate!, only: [:show, :index, :create ]
+  before_action :set_review, only: [:show, :destroy, :update]
+  skip_before_action :authenticate!, only: [:index, :create ]
 
   def index
     @reviews = Review.all
@@ -36,6 +36,7 @@ class ReviewsController < ApplicationController
 
   def update
     json_request = JSON.parse(request.body.read)
+    json_request[:user_id] = current_user.id
     if @review.update(json_request)
       render json: @review
     else
