@@ -6,7 +6,7 @@ import kachinko_close from "../../image/kachinko_large_close.svg";
 import { useDispatch, useSelector } from "react-redux";
 import movieCommentsModule from "../../modules/movieCommentsModule";
 
-function ReceivedList() {
+const ReceivedList = () => {
     // stateの確認用（あとで消す）
     // stateの中身を確認するために使用している（後で変更する）
     const useMovieComments = () => {return useSelector(state => state);};
@@ -17,11 +17,7 @@ function ReceivedList() {
     const dispatch = useDispatch();
     // 選ばれたカチンコのIDをstoreのSelectedIdに上書きする
     const setSelectedId = (id) => {
-        console.log(id+1);
         dispatch(movieCommentsModule.actions.setSelectedId(id+1));
-
-        console.log("-------------------");
-        console.log(useMovieComments);
     }
 
     return (
