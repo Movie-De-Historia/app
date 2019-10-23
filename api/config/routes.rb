@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get  'genre/index',  to: 'genres#index'
   get  'genre/show/:id',  to: 'genres#show'
-  
+
   get  'log',  to: 'logs#index'
   get  'log/:id',  to: 'logs#show'
   post 'log',  to: 'logs#create'
@@ -19,6 +19,13 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
   put '/users', to: 'users#update'
   delete '/users', to: 'users#destroy'
-  
+
+  # resources :reviews
+  get '/reviews', to: 'reviews#index'
+  get '/reviews/:id', to: 'reviews#show'
+  post '/reviews', to: 'reviews#create'
+  delete '/reviews/:id', to: 'reviews#destroy'
+  put '/reviews/:id', to: 'reviews#update'
+
 end
 
