@@ -3,17 +3,18 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
+import store, { persistor } from './configureStore';
 import { Provider } from "react-redux";
-import { setupStore } from "./store";
+import { PersistGate } from 'redux-persist/integration/react'
 import { StylesProvider } from '@material-ui/styles';
-
-const store = setupStore();
 
 ReactDOM.render(
     <Provider store={store}>
-        <StylesProvider injectFirst>
-            <App />
-        </StylesProvider>
+        <PersistGate loading={null} persistor={persistor}>
+            <StylesProvider injectFirst>
+                <App />
+            </StylesProvider>
+        </PersistGate>
     </Provider>,
     document.getElementById('root')
 );

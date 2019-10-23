@@ -1,5 +1,4 @@
 import { createSlice } from "redux-starter-kit";
-import { useSelector } from "react-redux";
 
 const movieCommentsInitialState = {
     selectedCommentId: 0,
@@ -68,8 +67,5 @@ const movieCommentsModule = createSlice({
         },
     }
 });
-
-// stateの中身を確認するために使用している（後で変更する）
-export const useMovieComments = () => {return useSelector(state => state);};
 
 export default movieCommentsModule;
