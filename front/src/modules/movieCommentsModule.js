@@ -2,12 +2,9 @@ import { createSlice } from "redux-starter-kit";
 
 const movieCommentsInitialState = {
     selectedCommentId: 0,
-
-    messageInput: [],
-
     list: [
         {
-            id: 1,
+            id: 0,
             title: "タイトル1",
             genre: "ジャンル1",
             onePhrase: "ひとこと1",
@@ -15,9 +12,10 @@ const movieCommentsInitialState = {
             isLikeState: false,
             isSaved: false,
             imgType: "kachinko_open",
+            messageInput: "",
         },
         {
-            id: 2,
+            id: 1,
             title: "タイトル2",
             genre: "ジャンル2",
             onePhrase: "ひとこと2",
@@ -25,9 +23,10 @@ const movieCommentsInitialState = {
             isLikeState: false,
             isSaved: false,
             imgType: "kachinko_close",
+            messageInput: "",
         },
         {
-            id: 3,
+            id: 2,
             title: "タイトル3",
             genre: "ジャンル3",
             onePhrase: "ひとこと3",
@@ -35,6 +34,7 @@ const movieCommentsInitialState = {
             isLikeState: false,
             isSaved: false,
             imgType: "kachinko_close",
+            messageInput: "",
         },
     ]
 };
@@ -43,9 +43,14 @@ const movieCommentsModule = createSlice({
     slice: "movieComments",
     initialState: movieCommentsInitialState,
     reducers: {
+        // stateの状態を初期化する
+        initializeState: (state, action) => {
+            state = movieCommentsInitialState;
+        },
+
         // いいねの状態を変更する
         changeLikeState: (state, action) => {
-            const id = action.payload;  
+            const id = action.payload;
             state.list.forEach(comment => {
                 comment.isLikeState =
                     comment.id === id ? !comment.isLikeState : comment.isLikeState;
@@ -60,10 +65,12 @@ const movieCommentsModule = createSlice({
 
         // ユーザ（あるいはトークン）と一緒にメッセージ内容を保存する
         saveMessageInput: (state, action) => {
+            const selectedId = state.selectedCommentId;
             const text = action.payload;
-            // token(or User)はとりあえず固定（後で変更する）
-            const token = "9y7DyLFXQqVFsESjPNSBV9fq";
-            state.messageInput.push({ token: {token}, text: {text} });
+            state.list.forEach((comment, index) => {
+                comment.messageInput =
+                    selectedId === index ? text : comment.messageInput;
+            });
         },
     }
 });

@@ -9,7 +9,7 @@ import movieCommentsModule from "../../modules/movieCommentsModule";
 const ReceivedList = () => {
     // stateの確認用（あとで消す）
     // stateの中身を確認するために使用している（後で変更する）
-    const useMovieComments = () => {return useSelector(state => state);};
+    const useMovieComments = () => {return useSelector(state => state)};
 
     const state = useMovieComments()["movieComments"].list;
     console.log(useMovieComments()["movieComments"]);
@@ -17,7 +17,7 @@ const ReceivedList = () => {
     const dispatch = useDispatch();
     // 選ばれたカチンコのIDをstoreのSelectedIdに上書きする
     const setSelectedId = (id) => {
-        dispatch(movieCommentsModule.actions.setSelectedId(id+1));
+        dispatch(movieCommentsModule.actions.setSelectedId(id));
     }
 
     return (
