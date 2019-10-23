@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   get  'log/:id',  to: 'logs#show'
   post 'log',  to: 'logs#create'
 
+  get 'message/:id', to: 'messages#show'
+  post 'message', to: 'messages#create'
+  put 'message/:id', to: 'messages#update'
+
   # resources :users
   get '/me', to: 'users#show'
   get '/users', to: 'users#index'
