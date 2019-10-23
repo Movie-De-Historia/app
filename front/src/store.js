@@ -1,9 +1,7 @@
 import { configureStore, getDefaultMiddleware  } from "redux-starter-kit";
-// import { rootReducer } from "./modules/rootState";
-import movieCommentsModule from "./modules/movieCommentsModule";
+import rootReducer from "./modules/rootState";
 import logger from "redux-logger";
 
-// setup 関数を用意してエクスポートする。
 export const setupStore = () => {
     const middlewares = [...getDefaultMiddleware()];
 
@@ -13,8 +11,7 @@ export const setupStore = () => {
     }
 
     const store = configureStore({
-        // reducer: rootReducer,
-        reducer: movieCommentsModule.reducer,
+        reducer: rootReducer,
         middleware: middlewares,
     });
 
