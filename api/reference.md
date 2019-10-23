@@ -24,6 +24,16 @@ Genreの返り値
 
 ### ルーティング
 
+レビューAPIのエンドポイント一覧
+
+|HTTPメソッド|エンドポイント|
+|:---------|:-----------|
+|GET|/reviews|
+|GET|/reviews/:id|
+|POST|/reviews|
+|PUT|/reviews/:id|
+|DELET|/reviews/:id|
+
 ### リクエストサンプル
 **GET /reviews**
 
