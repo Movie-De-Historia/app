@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch } from "react-redux";
 import movieCommentsModule, { useMovieComments } from "../../modules/movieCommentsModule";
 import Header from '../Header/Header';
@@ -12,9 +12,69 @@ import SaveAltIcon from '@material-ui/icons/SaveAlt';
 import ReportIcon from '@material-ui/icons/Report';
 import Fab from '@material-ui/core/Fab';
 
-function AfterSaving() {
+const useStyles = makeStyles(theme => ({
+    button:{
+        width: "21px",
+        marginRight: theme.spacing(1),
+        '&:hover': {
+            background: 'black'
+        }
+    },
+
+    like: ({ likeState }) => ({
+        width: "16px",
+        color: likeState ? "red" : "white",
+        marginRight: theme.spacing(1),
+        '&:hover': {
+            background: 'black'
+        }
+    }),
+
+    save: ({ saveState }) => ({
+        width: "21px",
+        color: saveState ? "#33cc30" : "white",
+        marginRight: theme.spacing(1),
+        '&:hover': {
+            background: 'black'
+        }
+    }),
+
+    background: {
+        color: "white",
+        width: "100px",
+        height: "37px",
+        backgroundColor: "black",
+        '&:hover': {
+            background: 'black'
+        }
+    },
+
+    submit: {
+        display: "relative",
+        color: "white",
+        width: "77px",
+        height: "40px",
+        left: 274,
+        top: 0,
+        fontSize: 19,
+        padding: 0,
+        margin: 0,
+        backgroundColor: "black",
+        '&:hover': {
+            background: 'black'
+        }
+    },
+}));
+
+const AfterSaving = () => {
     let messageText = "";
     const dispatch = useDispatch();
+    const reverseLikeState = () => dispatch(movieCommentsModule.actions.reverseLikeState());
+    const reverseSaveState = () => dispatch(movieCommentsModule.actions.reverseSaveState());
+    const id = useMovieComments()["movieComments"].selectedCommentId;
+    const comments = useMovieComments()["movieComments"].list
+    const likeState = comments.filter((comment) => comment.id === id)[0].isLikeState;
+    const saveState = comments.filter((comment) => comment.id === id)[0].isSaved;
     const onChangeMessage = (e) => { messageText = e.target.value };
     const onSubmitMessage = () => {
         // messageTextがnullか空のときは何もしない
@@ -30,78 +90,23 @@ function AfterSaving() {
         dispatch(movieCommentsModule.actions.saveMessageInput(messageText));
     };
 
-    const useStyles = makeStyles(theme => ({
-        button:{
-            width: "21px",
-            marginRight: theme.spacing(1),
-            '&:hover': {
-                background: 'black'
-            }
-        },
-    
-        like: ({ likeState }) => ({
-            width: "16px",
-            color: likeState ? "red" : "white",
-            marginRight: theme.spacing(1),
-            '&:hover': {
-                background: 'black'
-            }
-        }),
-    
-        save: {
-            width: "21px",
-            color: "#33cc30",
-            marginRight: theme.spacing(1),
-            '&:hover': {
-                background: 'black'
-            }
-        },
-
-        background: {
-            color: "white",
-            width: "100px",
-            height: "37px",
-            backgroundColor: "black",
-            '&:hover': {
-                background: 'black'
-            }
-        },
-
-        submit: {
-            display: "relative",
-            color: "white",
-            width: "77px",
-            height: "40px",
-            left: 274,
-            top: 0,
-            fontSize: 19,
-            padding: 0,
-            margin: 0,
-            backgroundColor: "black",
-            '&:hover': {
-                background: 'black'
-            }
-        },
-    }));
-
-    const [likeState, setLikeState] = useState(false);
-    const classes = useStyles({ likeState });
+    const classes = useStyles({ likeState, saveState});
 
     return (
         <>
         <Header displayLogoReturn={false} LifeTime={true} MyPageLogo={true} title="受信箱"/>
         <Footer displayColor />
-            
+
         <div className="App-body1">
-            <img src={image_film} className="film-short" alt="logo" /> 
+            <img src={image_film} className="film-short" alt="logo" />
 
             <div className="buttonList">
-                <Fab variant="extended" className={classes.background} onClick={() => setLikeState(!likeState)} >
+                <Fab variant="extended" className={classes.background} onClick={() => reverseLikeState()} >
                     <FavoriteIcon className={classes.like}/>
                     いいね
                 </Fab>
 
-                <Fab variant="extended" className={classes.background}>
+                <Fab variant="extended" className={classes.background} onClick={() => reverseSaveState()}>
                     <SaveAltIcon className={classes.save}/>
                     保存
                 </Fab>
