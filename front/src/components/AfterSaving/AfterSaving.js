@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import React from 'react';
+import { useDispatch } from "react-redux";
 import movieCommentsModule, { useMovieComments } from "../../modules/movieCommentsModule";
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -30,14 +30,14 @@ const useStyles = makeStyles(theme => ({
         }
     }),
 
-    save: {
+    save: ({ saveState }) => ({
         width: "21px",
-        color: "#33cc30",
+        color: saveState ? "#33cc30" : "white",
         marginRight: theme.spacing(1),
         '&:hover': {
             background: 'black'
         }
-    },
+    }),
 
     background: {
         color: "white",
@@ -68,9 +68,13 @@ const useStyles = makeStyles(theme => ({
 
 const AfterSaving = () => {
     let messageText = "";
-    const useSelectedId = () => {return useSelector(state => state["movieComments"].selectedCommentId);};
-    const id = useSelectedId()
     const dispatch = useDispatch();
+    const reverseLikeState = () => dispatch(movieCommentsModule.actions.reverseLikeState());
+    const reverseSaveState = () => dispatch(movieCommentsModule.actions.reverseSaveState());
+    const id = useMovieComments()["movieComments"].selectedCommentId;
+    const comments = useMovieComments()["movieComments"].list
+    const likeState = comments.filter((comment) => comment.id === id)[0].isLikeState;
+    const saveState = comments.filter((comment) => comment.id === id)[0].isSaved;
     const onChangeMessage = (e) => { messageText = e.target.value };
     const onSubmitMessage = () => {
         // messageTextがnullか空のときは何もしない
@@ -86,8 +90,7 @@ const AfterSaving = () => {
         dispatch(movieCommentsModule.actions.saveMessageInput(messageText));
     };
 
-    const [likeState, setLikeState] = useState(false);
-    const classes = useStyles({ likeState });
+    const classes = useStyles({ likeState, saveState});
 
     return (
         <>
@@ -98,12 +101,12 @@ const AfterSaving = () => {
             <img src={image_film} className="film-short" alt="logo" />
 
             <div className="buttonList">
-                <Fab variant="extended" className={classes.background} onClick={() => setLikeState(!likeState)} >
+                <Fab variant="extended" className={classes.background} onClick={() => reverseLikeState()} >
                     <FavoriteIcon className={classes.like}/>
                     いいね
                 </Fab>
 
-                <Fab variant="extended" className={classes.background}>
+                <Fab variant="extended" className={classes.background} onClick={() => reverseSaveState()}>
                     <SaveAltIcon className={classes.save}/>
                     保存
                 </Fab>

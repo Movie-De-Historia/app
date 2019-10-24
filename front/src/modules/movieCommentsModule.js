@@ -1,4 +1,5 @@
 import { createSlice } from "redux-starter-kit";
+import { useSelector } from "react-redux";
 
 const movieCommentsInitialState = {
     selectedCommentId: 0,
@@ -49,11 +50,20 @@ const movieCommentsModule = createSlice({
         },
 
         // いいねの状態を変更する
-        changeLikeState: (state, action) => {
-            const id = action.payload;
+        reverseLikeState: (state, action) => {
+            const id = state.selectedCommentId;
             state.list.forEach(comment => {
                 comment.isLikeState =
                     comment.id === id ? !comment.isLikeState : comment.isLikeState;
+            });
+        },
+
+        // 保存の状態を変更する
+        reverseSaveState: (state, action) => {
+            const id = state.selectedCommentId;
+            state.list.forEach(comment => {
+                comment.isSaved =
+                    comment.id === id ? !comment.isSaved : comment.isSaved;
             });
         },
 
@@ -74,5 +84,7 @@ const movieCommentsModule = createSlice({
         },
     }
 });
+
+export const useMovieComments = () => { return useSelector(state => state); };
 
 export default movieCommentsModule;

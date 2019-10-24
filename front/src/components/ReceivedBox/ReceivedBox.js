@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch } from "react-redux";
+import movieCommentsModule, { useMovieComments } from "../../modules/movieCommentsModule";
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import image_film from '../../image/image_film_short.svg';
@@ -18,7 +20,7 @@ const useStyles = makeStyles(theme => ({
             background: 'black'
         }
     },
-    
+
     like: ({ likeState }) => ({
         width: "16px",
         color: likeState ? "red" : "white",
@@ -49,26 +51,31 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function ReceivedBox() {
-    const [likeState, setLikeState] = useState(false);
-    const [saveState, setSaveState] = useState(false);
+    const dispatch = useDispatch();
+    const reverseLikeState = () => dispatch(movieCommentsModule.actions.reverseLikeState());
+    const reverseSaveState = () => dispatch(movieCommentsModule.actions.reverseSaveState());
+    const id = useMovieComments()["movieComments"].selectedCommentId;
+    const comments = useMovieComments()["movieComments"].list;
+    const likeState = comments.filter((comment) => comment.id === id)[0].isLikeState;
+    const saveState = comments.filter((comment) => comment.id === id)[0].isSaved;
     const classes = useStyles({ likeState, saveState });
 
     return (
         <>
         <Header displayLogoReturn={true} MyPageLogo={true} title="受信箱"/>
         <Footer/>
-            
+
         <div className="App-body">
             <img src={image_film} className="film-short" alt="logo" />
 
             <div className="buttonList">
-                <Fab variant="extended" className={classes.background} onClick={() => setLikeState(!likeState)} >
+                <Fab variant="extended" className={classes.background} onClick={() => reverseLikeState()} >
                     <FavoriteIcon className={classes.like}/>
                     いいね
                 </Fab>
 
                 <Link to="AfterSaving" className="Link">
-                    <Fab variant="extended" className={classes.background} onClick={() => setSaveState(!saveState)}>
+                    <Fab variant="extended" className={classes.background} onClick={() => reverseSaveState()}>
                         <SaveAltIcon className={classes.save}/>
                         保存
                     </Fab>
