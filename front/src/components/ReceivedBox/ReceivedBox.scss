@@ -12,11 +12,33 @@
 }
 
 .film-short {
-    position: relative;
-    width: 320px;
-    height: 424px;
-    left: 0px;
-    top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.textTop {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 23px;
+    width: 245px;
+    height: 101px;
+    background-color: white;
+    color: black;
+    font-size: 23px;
+}
+
+.textBottom {
+    position: absolute;
+    top: 146px;
+    width: 245px;
+    height: 255px;
+    background-color: white;
+    color: black;
 }
 
 .buttonList{

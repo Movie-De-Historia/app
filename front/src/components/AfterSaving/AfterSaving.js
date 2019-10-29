@@ -75,6 +75,10 @@ const AfterSaving = () => {
     const comments = useMovieComments()["movieComments"].list
     const likeState = comments.filter((comment) => comment.id === id)[0].isLikeState;
     const saveState = comments.filter((comment) => comment.id === id)[0].isSaved;
+    const title = comments.filter((comment) => comment.id === id)[0].title;
+    const genre = comments.filter((comment) => comment.id === id)[0].genre;
+    const onePhrase = comments.filter((comment) => comment.id === id)[0].onePhrase;
+    const text = comments.filter((comment) => comment.id === id)[0].text;
     const onChangeMessage = (e) => { messageText = e.target.value };
     const onSubmitMessage = () => {
         // messageTextがnullか空のときは何もしない
@@ -98,7 +102,11 @@ const AfterSaving = () => {
         <Footer displayColor />
 
         <div className="App-body1">
-            <img src={image_film} className="film-short" alt="logo" />
+            <div className="film-short">
+                <img src={image_film} alt="logo" />
+                <div className="textTop"> { title }<br/>{ genre }<br/>{ onePhrase }</div>
+                <div className="textBottom"> { text } </div>
+            </div>
 
             <div className="buttonList">
                 <Fab variant="extended" className={classes.background} onClick={() => reverseLikeState()} >

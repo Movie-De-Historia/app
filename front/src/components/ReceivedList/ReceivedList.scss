@@ -1,0 +1,66 @@
+.App-body {
+    position: relative;
+    z-index: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    top: 60px;
+    height: 100%;
+    color: white;
+}
+
+.Content-kachinko {
+    position: relative;
+    animation: App-logo-spin infinite 20s linear;
+    height: 43min;
+    margin-top: 0px;
+    pointer-events: none;
+}
+
+.App-logo0 {
+    animation: App-logo-spin infinite 20s linear;
+    width: 265px;
+    margin-top: 0px;
+    pointer-events: none;
+}
+
+.App-logo1 {
+    animation: App-logo-spin infinite 20s linear;
+    width: 265px;
+    margin-top: 20px;
+    pointer-events: none;
+}
+
+.App-logo2 {
+    animation: App-logo-spin infinite 20s linear;
+    width: 265px;
+    margin-top: 20px;
+    pointer-events: none;
+}
+
+.kachinko-open-title{
+    position: absolute;/*絶対配置*/
+    display: inline;
+    color:rgb(255, 255, 255);
+    top: 68.5%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+    font-size: 18px;
+}
+
+.kachinko-close-title{
+    position: absolute;/*絶対配置*/
+    display: inline;
+    color:rgb(255, 255, 255);
+    top: 69%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+    font-size: 18px;
+}
