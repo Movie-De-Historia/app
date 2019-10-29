@@ -5,6 +5,7 @@ import kachinko_open from "../../image/kachinko_large_open.svg";
 import kachinko_close from "../../image/kachinko_large_close.svg";
 import { useDispatch } from "react-redux";
 import movieCommentsModule, { useMovieComments } from "../../modules/movieCommentsModule";
+import './ReceivedList.scss'
 
 const ReceivedList = () => {
     // stateの確認用（あとで消す）
