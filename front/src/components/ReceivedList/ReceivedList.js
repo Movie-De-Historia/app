@@ -14,9 +14,7 @@ const ReceivedList = () => {
 
     const dispatch = useDispatch();
     // 選ばれたカチンコのIDをstoreのSelectedIdに上書きする
-    const setSelectedId = (id) => {
-        dispatch(movieCommentsModule.actions.setSelectedId(id));
-    }
+    const setSelectedId = (id) => { dispatch(movieCommentsModule.actions.setSelectedId(id)); }
 
     return (
         <div>
