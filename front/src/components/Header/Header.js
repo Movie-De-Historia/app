@@ -8,43 +8,52 @@ import movieCommentsModule, { useMovieComments } from "../../modules/movieCommen
 
 const Header = ( props ) => {
     let title = props.title;
+    const date = new Date();
+    const dispatch = useDispatch();
+    const savedTime = useMovieComments()["movieComments"].savedTime;
+    const saveTime = (date) => {
+        // 一度だけ保存する（0は初期値）
+        if (savedTime === 0) {
+            dispatch(movieCommentsModule.actions.saveTime(date));
+        };
+    };
+    if (props.LifeTime){
+        saveTime(date.getTime());
+    };
     let lifeTime;
+    const limitTime = 24;
+    const diffTime = limitTime - Math.floor((date.getTime() - savedTime ) / (1000 * 60));
+    const [time, setTime] = useState(diffTime < 0 ? 0 : diffTime);
 
     const useTimer = (currentDate) => {
-        const [time, setTime] = useState(0);
-        const dispatch = useDispatch();
-        const savedTime = useMovieComments()["movieComments"].savedTime;
-        const saveTime = (date) => {
-            // 一度だけ保存する（0は初期値）
-            if (savedTime === 0) {
-                dispatch(movieCommentsModule.actions.saveTime(date));
-            };
-        };
-
         useEffect(() => {
-            let timerID;
-            // tick()を即時実行
-            if (props.LifeTime) {
-                timerID = setInterval(tick(), 1000);
+            let timerID = 0;
+            if ( (props.LifeTime === true) ) {
+                // 初めて保存したときの時間をreduxに一度だけ追加
+                // saveTime(currentDate.getTime());
+
+                if (time <= 0) {
+                    clearInterval(timerID);
+                } else {
+                    timerID = setInterval(tick(), 1000);
+                }
             }
+
             return () => clearInterval(timerID);
         }, [time]);
 
         const tick = () => {
-            const data = new Date();
             // デバックしやすいように「時」ではなく「分」で計算（あとで戻す）
             // ミリ秒を分に変換して計算するため1000x60で割る
-            const limitTime = 24;
-            const elapsedTime = limitTime - Math.floor(( data.getTime() - savedTime ) / (1000 * 60));
+            const latestDate = new Date();
+            const getTime = latestDate.getTime();
+            const elapsedTime = limitTime - Math.floor(( getTime - savedTime ) / (1000 * 60));
             // デバック用（後で消す）
-            console.log(elapsedTime)
-            // 初めて保存した時間をreduxに一度だけ追加
-            saveTime(currentDate.getTime());
+            console.log(`残り時間: ${elapsedTime} 分`)
             // 一定時間ごとに更新
             setTime(elapsedTime);
             return tick;
         };
-
         return time;
     };
 
@@ -57,7 +66,7 @@ const Header = ( props ) => {
         lifeTime =
             <p className="test">
                 <span className="Rest">残り </span>
-                <span className="LifeTime">{timer}分</span>
+                <span className="LifeTime">{timer} 分</span>
             </p>
     } else {
         lifeTime = <span />
