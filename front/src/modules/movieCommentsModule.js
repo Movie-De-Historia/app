@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 
 const movieCommentsInitialState = {
     selectedCommentId: 0,
+    savedTime: 0,
     list: [
         {
             id: 0,
@@ -81,6 +82,10 @@ const movieCommentsModule = createSlice({
                 comment.messageInput =
                     selectedId === index ? text : comment.messageInput;
             });
+        },
+
+        saveTime: (state, action) => {
+            state.savedTime = action.payload;
         },
     }
 });
