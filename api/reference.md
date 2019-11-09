@@ -37,28 +37,34 @@ Genreの返り値
 ### リクエストサンプル
 **GET /reviews**
 
-レビュー一覧を取得します．
+レビューを取得します．
+3つのレビューを取得し受信箱に必要な要素のみを返す．
 
 レスポンス例
 ```
 [
     {
+        "id": 23,
+        "movie_title": "Postman",
+        "head_text": "hahaha",
+        "spoiler": false,
+        "genre_name": "SF"
+    },
+    {
+        "id": 18,
+        "movie_title": "ルパン",
+        "head_text": "面白かった",
+        "spoiler": false,
+        "genre_name": "サスペンス"
+    },
+    {
         "id": 2,
         "movie_title": "千と千尋の神隠し",
         "head_text": "面白かった",
-        "comment": "和気藹々として喜怒哀楽な感じ",
         "spoiler": true,
-        "user_id": 2,
-        "created_at": "2019-10-22T03:57:27.724Z",
-        "updated_at": "2019-10-22T03:57:27.724Z",
-        "genre_id": 13
-    },
-    {
-        "id": 3,
-        "movie_title": "ハウルの動く城",
-        "head_text": "面白かった",
-        "comment": "和気藹々として喜怒哀楽な感じ",
-        ...
+        "genre_name": "ノスタルジー"
+    }
+]
 ```
 
 **GET /reviews/:id**
