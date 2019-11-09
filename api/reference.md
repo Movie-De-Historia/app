@@ -20,9 +20,9 @@
 
 |HTTPメソッド|エンドポイント|
 |:---------|:-----------|
-|GET|log|
-|GET|log/:id|
-|POST|log|
+|GET|/log|
+|GET|/log/:id|
+|POST|/log|
 
 ### リクエストサンプル
 **GET /log**
@@ -129,8 +129,8 @@ IDにマッチするログの詳細を返す．
 
 |HTTPメソッド|エンドポイント|
 |:---------|:-----------|
-|GET|genre/index|
-|GET|genre/show/:id|
+|GET|/genre/index|
+|GET|/genre/show/:id|
 
 ### リクエストサンプル
 **GET /genre/index**
@@ -204,9 +204,9 @@ IDにマッチするジャンル名を返す．
 
 |HTTPメソッド|エンドポイント|
 |:---------|:-----------|
-|GET|message/:id|
-|PUT|message/:id|
-|POST|message|
+|GET|/message/:id|
+|PUT|/message/:id|
+|POST|/message|
 
 ### リクエストサンプル
 **GET /message/:id**
