@@ -44,7 +44,8 @@ const Header = ( props ) => {
             // diff : 経過秒数(s)
             const diff = Math.floor((d.getTime() - savedTime) / 1000); // ms -> s
             let elapsedTime = limitTime * 60 * 60 - Math.floor(diff); // limitTimeはh -> s，diffはs
-            console.log(elapsedTime);
+            // デバック用（後で消す）
+            // console.log(elapsedTime);
 
             if (elapsedTime > 3599) {
                 elapsedTime = Math.floor(elapsedTime / 60 / 60); // s -> h
@@ -58,7 +59,7 @@ const Header = ( props ) => {
 
             setTime(elapsedTime);
             // デバック用（後で消す）
-            console.log(`残り: ${elapsedTime} ${unit}`);
+            // console.log(`残り: ${elapsedTime} ${unit}`);
             return tick;
         };
         return time < 0 ? 0 : time;
