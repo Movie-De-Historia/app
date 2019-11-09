@@ -3,8 +3,16 @@ class ReviewsController < ApplicationController
   skip_before_action :authenticate!, only: [:index, :create ]
 
   def index
-    @reviews = Review.all
-    render json: @reviews
+    reviews = Review.joins(:genre)
+                .select('reviews.id, movie_title, head_text, spoiler, genres.name')
+                .sample(3)
+    response = []
+    reviews.each do |review|
+      r = review.attributes
+      r[:genre_name] = r.delete("name")
+      response.push(r)
+    end
+    render json: response
   end
 
   def show

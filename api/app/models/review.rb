@@ -2,6 +2,7 @@ class Review < ApplicationRecord
   belongs_to :user
   has_many :log
   has_many :message
+  belongs_to :genre
   validates :movie_title, presence: true, length:{ maximum: 30 }
   validates :head_text, presence: true, length: { maximum: 30 }
   validates :comment, presence: true, length: { maximum: 50 }
