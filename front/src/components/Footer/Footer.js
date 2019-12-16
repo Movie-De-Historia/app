@@ -7,7 +7,7 @@ import './Footer.css';
 
 function Footer(props) {
     let DisplayColor;
-    
+
     if (props.displayColor === "gray") {
         DisplayColor = "gray";
     } else {
@@ -16,7 +16,7 @@ function Footer(props) {
 
     return (
         <footer className={"App-footer-" + DisplayColor}>
-            <Link to='/ReceivedList'> <img src={unknown} className={"Footer-unknown-" + DisplayColor} alt="logo" /></Link>
+            <Link to='/'> <img src={unknown} className={"Footer-unknown-" + DisplayColor} alt="logo" /></Link>
             <Link to='/OutBox'><img src={plane} className={"Footer-plane-" + DisplayColor} alt="logo" /></Link>
             <Link to='/SettingDisplay'><img src={gear} className={"Footer-gear-" + DisplayColor} alt="logo" /></Link>
         </footer>

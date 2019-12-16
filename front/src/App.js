@@ -13,7 +13,7 @@ import './App.css';
 function App() {
     return (
         <BrowserRouter>
-            <Route exact path='/ReceivedList' component={ReceivedList} />
+            <Route exact path='/' component={ReceivedList} />
             <Route exact path='/ReceivedBox' component={ReceivedBox} />
             <Route exact path='/OutBox' component={OutBox} />
             <Route exact path='/AfterSaving' component={AfterSaving} />
@@ -21,7 +21,7 @@ function App() {
             <Route exact path='/SettingDisplay' component={SettingDisplay} />
             <Route exact path='/HistoryList' component={HistoryList} />
             <Route exact path='/SentList' component={SentList} />
-        </BrowserRouter> 
+        </BrowserRouter>
     );
 }
 
