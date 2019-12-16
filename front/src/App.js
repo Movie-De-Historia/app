@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
 import ReceivedList from './components/ReceivedList/ReceivedList';
 import ReceivedBox from './components/ReceivedBox/ReceivedBox';
@@ -11,6 +11,13 @@ import SentList from './components/SentList/SentList';
 import './App.css';
 
 function App() {
+    const [count, setCount] = useState(0);
+    useEffect(() => {
+            // console.log("UPDATE");
+            setCount(count + 1);
+            console.log(count);
+    }, []);
+
     return (
         <BrowserRouter>
             <Route exact path='/' component={ReceivedList} />

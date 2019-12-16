@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import kachinko_open from "../../image/kachinko_large_open.svg";
@@ -22,11 +23,11 @@ const ReceivedList = () => {
             <Footer/>
             <div className="App-body">
                 {state.map((review, index) =>(
-                    <a key={index} href="/ReceivedBox" onClick={() => {setSelectedId(index)}}>
+                    <Link key={index} to="/ReceivedBox" onClick={() => {setSelectedId(index)}}>
                         <div className="Content-kachinko">
                             <DisplayKachinko review={review} />
                         </div>
-                    </a>
+                    </Link>
                 ))}
             </div>
         </div>
