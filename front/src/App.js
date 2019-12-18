@@ -9,15 +9,27 @@ import SettingDisplay from './components/SettingDisplay/SettingDisplay';
 import HistoryList from './components/HistoryList/HistoryList';
 import SentList from './components/SentList/SentList';
 import './App.css';
-import { getPosts } from './modules/getPost';
+import { getPosts, getReviewComment } from './modules/getPost';
 import { useDispatch } from "react-redux";
+import movieCommentsModule, { useMovieComments } from "./modules/movieCommentsModule";
+
 
 function App() {
     const dispatch = useDispatch();
 
+    // list.forEach((x, idx) => {
+    //     console.log(idx, x.backend_id);　// １個ずつとりだせてる
+    //     dispatch(movieCommentsModule.actions.getPostsRequest());
+    //     // const review = getReviewComment(dispatch, idx, x.backend_id);
+    //     // review();
+    // });
+
     useEffect(() => {
-        const posts = getPosts(dispatch);
-        posts();
+        async function fetchPost() {
+            const posts = getPosts(dispatch);
+            await posts();
+        }
+        fetchPost();
     }, []);
 
     return (

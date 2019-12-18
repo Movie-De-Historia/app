@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from "react-redux";
 import movieCommentsModule, { useMovieComments } from "../../modules/movieCommentsModule";
 import Header from '../Header/Header';
@@ -11,6 +11,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
 import ReportIcon from '@material-ui/icons/Report';
 import Fab from '@material-ui/core/Fab';
+import { getReviewComment } from '../../modules/getPost';
 
 const useStyles = makeStyles(theme => ({
     button:{
@@ -63,6 +64,11 @@ function ReceivedBox() {
     const onePhrase = comments.filter((comment) => comment.id === id)[0].onePhrase;
     const text = comments.filter((comment) => comment.id === id)[0].text;
     const classes = useStyles({ likeState, saveState });
+
+    // useEffect(() => {
+    //     const review = getReviewComment(dispatch, );
+    //     review();
+    // }, []);
 
     return (
         <>

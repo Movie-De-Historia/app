@@ -2,13 +2,14 @@ import { createSlice } from "redux-starter-kit";
 import { useSelector } from "react-redux";
 
 const movieCommentsInitialState = {
-    selectedCommentId: 0,
+    selectedCommentId: 1,
     savedTime: 0,
     isFetching: false,
     items: [],
     list: [
         {
-            id: 0,
+            id: 1,
+            backend_id: 1,
             title: "タイトル1",
             genre: "ジャンル1",
             onePhrase: "ひとこと1",
@@ -19,7 +20,8 @@ const movieCommentsInitialState = {
             messageInput: "",
         },
         {
-            id: 1,
+            id: 2,
+            backend_id: 2,
             title: "タイトル2",
             genre: "ジャンル2",
             onePhrase: "ひとこと2",
@@ -30,7 +32,8 @@ const movieCommentsInitialState = {
             messageInput: "",
         },
         {
-            id: 2,
+            id: 3,
+            backend_id: 3,
             title: "タイトル3",
             genre: "ジャンル3",
             onePhrase: "ひとこと3",
@@ -119,7 +122,23 @@ const movieCommentsModule = createSlice({
                     x.title = latestItems.items[idx].movie_title;
                     x.onePhrase = latestItems.items[idx].head_text;
                     x.genre = latestItems.items[idx].genre_name;
-                    x.title = latestItems.items[idx].movie_title;
+                    x.backend_id = latestItems.items[idx].id;
+                });
+            }
+        },
+
+        updateStateText: (state, action) => {
+            // あとここを１個ずつindex渡して保存する処理を書けばおわおわり
+            if (state.isFetching == false) {
+                const idx = action.payload;
+                // console.log(id);
+                const length = state.items.length;
+                const latestItems = state.items[length - 1];
+                state.list.forEach((x, index) => {
+                    x.text = idx === (index) ? latestItems.items[idx].comment : x.text;
+                    // if (idx===id) {
+                        // x.text = latestItems.items[idx].comment;
+                    // }
                 });
             }
         },
