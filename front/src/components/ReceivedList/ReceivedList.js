@@ -15,54 +15,22 @@ import { getPosts, getReviewComment } from "../../modules/getPost";
 const ReceivedList = () => {
     // stateの確認用（あとで消す）
     const state = useMovieComments()["movieComments"];
-    // console.log(useMovieComments()["movieComments"]);
 
     const dispatch = useDispatch();
     // 選ばれたカチンコのIDをstoreのSelectedIdに上書きする
     const setSelectedId = (id) => { dispatch(movieCommentsModule.actions.setSelectedId(id)); };
     const list = useMovieComments()["movieComments"].list;
 
-    // const dispatch = useDispatch();
-    // const list = useMovieComments()["movieComments"].list;
-
-    // list.forEach((x, idx) => {
-    //     console.log(idx, x.backend_id);　// １個ずつとりだせてる
-    //     dispatch(movieCommentsModule.actions.getPostsRequest());
-    //     // const review = getReviewComment(dispatch, idx, x.backend_id);
-    //     // review();
-    // });
-    // console.log(list);
-    // useEffect(() => {
-    //     list.forEach(async (x, idx) => {
-    //         console.log(idx, x.backend_id);　// １個ずつとりだせてる
-    //         const review = getReviewComment(dispatch, idx, x.backend_id);
-    //         review();
-    //     });
-    // }, []);
-
-    // list.forEach(async (x, idx) => {
-    //     console.log(idx, x.backend_id);　// １個ずつとりだせてる
-    //     const review = getReviewComment(dispatch, idx, x.backend_id);
-    //     review();
-    // });
-
     console.log(state);
 
     const length = state.items.length;
     const latestItems = state.items[length - 1];
 
-    // console.log(latestItems);
-
     useEffect(() => {
         list.forEach((x, idx) => {
-            // console.log(idx, x.backend_id);　// １個ずつとりだせてる
-            // dispatch(movieCommentsModule.actions.getPostsRequest());
-            // console.log("REVIEW");
-            // console.log(idx);
             const review = getReviewComment(dispatch, idx+1, x.backend_id);
             review();
         });
-        // console.log(list);
     }, [list]);
 
     return (

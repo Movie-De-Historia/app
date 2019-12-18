@@ -128,17 +128,12 @@ const movieCommentsModule = createSlice({
         },
 
         updateStateText: (state, action) => {
-            // あとここを１個ずつindex渡して保存する処理を書けばおわおわり
             if (state.isFetching == false) {
                 const idx = action.payload;
-                // console.log(id);
                 const length = state.items.length;
                 const latestItems = state.items[length - 1];
                 state.list.forEach((x, index) => {
-                    x.text = idx === (index) ? latestItems.items[idx].comment : x.text;
-                    // if (idx===id) {
-                        // x.text = latestItems.items[idx].comment;
-                    // }
+                    x.text = idx === (index+1) ? latestItems.items.comment : x.text;
                 });
             }
         },

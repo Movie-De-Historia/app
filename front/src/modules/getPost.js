@@ -28,7 +28,7 @@ export const getReviewComment = (dispatch, idx, review_id) => {
             }
         })
             .then(res => dispatch(movieCommentsModule.actions.getPostsSuccess(res.data)))
-            // .then(review_id => dispatch(movieCommentsModule.actions.updateStateText(idx, review_id)))
+            .then(review_id => dispatch(movieCommentsModule.actions.updateStateText(idx, review_id)))
             .catch(err => dispatch(movieCommentsModule.actions.getPostsFailure(err)));
     };
 };

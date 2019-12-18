@@ -17,13 +17,6 @@ import movieCommentsModule, { useMovieComments } from "./modules/movieCommentsMo
 function App() {
     const dispatch = useDispatch();
 
-    // list.forEach((x, idx) => {
-    //     console.log(idx, x.backend_id);　// １個ずつとりだせてる
-    //     dispatch(movieCommentsModule.actions.getPostsRequest());
-    //     // const review = getReviewComment(dispatch, idx, x.backend_id);
-    //     // review();
-    // });
-
     useEffect(() => {
         async function fetchPost() {
             const posts = getPosts(dispatch);
