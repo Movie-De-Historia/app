@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
-import PublishIcon from '@material-ui/icons/Publish';
 import './Form.css';
 
 const useStyles = makeStyles(theme => ({
@@ -47,7 +46,7 @@ function Form () {
             <textarea className="textareaDesc" name="desc" placeholder="本文" defaultValue=""></textarea>
             <Fab variant="extended" type="submit" className={ classes.background }>
                 送信
-            </Fab>            
+            </Fab>
         </form>
     );
 }
