@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 const movieCommentsInitialState = {
     selectedCommentId: 0,
     savedTime: 0,
+    isFetching: false,
+    items: [],
     list: [
         {
             id: 0,
@@ -86,6 +88,40 @@ const movieCommentsModule = createSlice({
 
         saveTime: (state, action) => {
             state.savedTime = action.payload;
+        },
+
+        getPostsRequest: (state) => {
+            state.items.push({
+                isFetching: true,
+            });
+        },
+
+        getPostsSuccess: (state, action) => {
+            state.items.push({
+                isFetching: false,
+                items: action.payload,
+                lastUpdated: Date.now(),
+            });
+        },
+
+        getPostsFailure: (state, action) => {
+            state.items.push({
+                isFetching: false,
+                error: action.payload,
+            });
+        },
+
+        updateStateList: (state) => {
+            if (state.isFetching == false) {
+                const length = state.items.length;
+                const latestItems = state.items[length - 1];
+                state.list.forEach((x, idx) => {
+                    x.title = latestItems.items[idx].movie_title;
+                    x.onePhrase = latestItems.items[idx].head_text;
+                    x.genre = latestItems.items[idx].genre_name;
+                    x.title = latestItems.items[idx].movie_title;
+                });
+            }
         },
     }
 });

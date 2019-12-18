@@ -9,13 +9,15 @@ import SettingDisplay from './components/SettingDisplay/SettingDisplay';
 import HistoryList from './components/HistoryList/HistoryList';
 import SentList from './components/SentList/SentList';
 import './App.css';
+import { getPosts } from './modules/getPost';
+import { useDispatch } from "react-redux";
 
 function App() {
-    const [count, setCount] = useState(0);
+    const dispatch = useDispatch();
+
     useEffect(() => {
-            // console.log("UPDATE");
-            setCount(count + 1);
-            console.log(count);
+        const posts = getPosts(dispatch);
+        posts();
     }, []);
 
     return (
