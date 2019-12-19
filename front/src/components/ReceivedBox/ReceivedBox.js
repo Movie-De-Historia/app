@@ -67,7 +67,7 @@ function ReceivedBox() {
 
     return (
         <>
-        <Header displayLogoReturn={true} MyPageLogo={true} title="受信箱"/>
+        <Header displayLogoReturn={true} MyPageLogo={true} title="Inbox"/>
         <Footer/>
 
         <div className="App-body">

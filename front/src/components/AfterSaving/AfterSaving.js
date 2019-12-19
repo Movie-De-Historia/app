@@ -98,7 +98,7 @@ const AfterSaving = () => {
 
     return (
         <>
-        <Header displayLogoReturn={false} LifeTime={true} MyPageLogo={true} title="受信箱"/>
+        <Header displayLogoReturn={false} LifeTime={true} MyPageLogo={true} title="Inbox"/>
         <Footer displayColor />
 
         <div className="App-body1">

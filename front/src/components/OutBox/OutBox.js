@@ -9,8 +9,8 @@ function OutBox() {
 
     return (
         <>
-            <Header displayLogoReturn={true} title="送信箱"/>
-            <Footer/>    
+            <Header displayLogoReturn={true} title="Outbox"/>
+            <Footer/>
             <Form />
         </>
     );

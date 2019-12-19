@@ -29,7 +29,7 @@ const ReceivedList = () => {
 
     return (
         <div>
-            <Header title="受信一覧" MyPageLogo={true}/>
+            <Header title="Inbox" MyPageLogo={true}/>
             <Footer/>
             <div className="App-body">
                 {list.map((review, index) =>(

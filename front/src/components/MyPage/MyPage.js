@@ -5,7 +5,7 @@ import Footer from '../Footer/Footer';
 function MyPage() {
     return (
         <>
-            <Header displayLogoReturn={true} title="マイページ"/>
+            <Header displayLogoReturn={true} title="My page"/>
             <Footer/>
         </>
     );
