@@ -20,7 +20,7 @@ export const getPosts = (dispatch) => {
 export const getReviewComment = (dispatch, idx, review_id) => {
     const token = "9y7DyLFXQqVFsESjPNSBV9fq";
     return () => {
-        console.log(idx, review_id);
+        // console.log(idx, review_id);
         // dispatch(movieCommentsModule.actions.getPostsRequest());
         return axios.get(`http://localhost:3000/reviews/${review_id}`, {
             headers: {

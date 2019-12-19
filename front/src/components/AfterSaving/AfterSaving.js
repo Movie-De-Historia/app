@@ -94,6 +94,10 @@ const AfterSaving = () => {
         dispatch(movieCommentsModule.actions.saveMessageInput(messageText));
     };
 
+    function handleSubmit(e) {
+        e.preventDefault();
+    }
+
     const classes = useStyles({ likeState, saveState});
 
     return (
@@ -127,6 +131,7 @@ const AfterSaving = () => {
 
             <form className="messageInput" onSubmit={onSubmitMessage}>
                 <input className="messageText" type="text" placeholder="メッセージを入力" onChange={onChangeMessage} defaultValue=""/>
+                {/* <Button className={classes.submit} type="submit" onClick={handleSubmit}>送信</Button> */}
                 <Button className={classes.submit} type="submit">送信</Button>
             </form>
         </div>

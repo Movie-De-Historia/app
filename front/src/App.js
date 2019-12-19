@@ -16,14 +16,21 @@ import movieCommentsModule, { useMovieComments } from "./modules/movieCommentsMo
 
 function App() {
     const dispatch = useDispatch();
+    // reverseMustUpdateState
+    const updateFlag = useMovieComments()["movieComments"].mustUpdate;
+    const setOffUpdateState = () => {dispatch(movieCommentsModule.actions.setOffMustUpdateState())};
 
     useEffect(() => {
-        async function fetchPost() {
-            const posts = getPosts(dispatch);
-            await posts();
+        if (updateFlag===true){
+            async function fetchPost() {
+                const posts = getPosts(dispatch);
+                await posts();
+                // await setOffUpdateState();
+            }
+            fetchPost();
+            setOffUpdateState();
         }
-        fetchPost();
-    }, []);
+    }, [updateFlag]);
 
     return (
         <BrowserRouter>

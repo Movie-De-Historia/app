@@ -5,6 +5,7 @@ const movieCommentsInitialState = {
     selectedCommentId: 1,
     savedTime: 0,
     isFetching: false,
+    mustUpdate: true,
     items: [],
     list: [
         {
@@ -136,6 +137,14 @@ const movieCommentsModule = createSlice({
                     x.text = idx === (index+1) ? latestItems.items.comment : x.text;
                 });
             }
+        },
+
+        setOffMustUpdateState: (state) => {
+            state.mustUpdate = false;
+        },
+
+        setOnMustUpdateState: (state) => {
+            state.mustUpdate = true;
         },
     }
 });
