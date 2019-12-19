@@ -86,7 +86,7 @@ const movieCommentsModule = createSlice({
             const text = action.payload;
             state.list.forEach((comment, index) => {
                 comment.messageInput =
-                    selectedId === index ? text : comment.messageInput;
+                    selectedId === (index+1) ? text : comment.messageInput;
             });
         },
 
