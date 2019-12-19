@@ -13,7 +13,7 @@ import { getReviewComment } from "../../modules/getPost";
 const ReceivedList = () => {
     // stateの確認用（あとで消す）
     const state = useMovieComments()["movieComments"];
-    console.log(state);
+    // console.log(state);
 
     const dispatch = useDispatch();
     // 選ばれたカチンコのIDをstoreのSelectedIdに上書きする
