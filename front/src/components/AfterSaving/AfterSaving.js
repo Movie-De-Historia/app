@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from "react-redux";
 import movieCommentsModule, { useMovieComments } from "../../modules/movieCommentsModule";
 import Header from '../Header/Header';
@@ -79,7 +79,7 @@ const AfterSaving = () => {
     const genre = comments.filter((comment) => comment.id === id)[0].genre;
     const onePhrase = comments.filter((comment) => comment.id === id)[0].onePhrase;
     const text = comments.filter((comment) => comment.id === id)[0].text;
-    const onChangeMessage = (e) => { messageText = e.target.value };
+    // const onChangeMessage = (e) => { messageText = e.target.value };
     const onSubmitMessage = () => {
         // messageTextがnullか空のときは何もしない
         if (!messageText) {
@@ -93,6 +93,17 @@ const AfterSaving = () => {
         // tokenと一緒にメッセージ内容をreduxに渡し，保存する
         dispatch(movieCommentsModule.actions.saveMessageInput(messageText));
     };
+
+    const [mainText, setMainText] = useState("");
+    const mainTextFunc = (e) => {setMainText(e.target.value)};
+
+    function handleSubmit(e) {
+        // 入力していない場所があれば送信できないように変更
+        if (mainText==="") {
+            e.preventDefault();
+            console.log("未入力な項目があります.")
+        }
+    }
 
     const classes = useStyles({ likeState, saveState});
 
@@ -126,9 +137,8 @@ const AfterSaving = () => {
             </div>
 
             <form className="messageInput" onSubmit={onSubmitMessage}>
-                <input className="messageText" type="text" placeholder="メッセージを入力" onChange={onChangeMessage} defaultValue=""/>
-                {/* <Button className={classes.submit} type="submit" onClick={handleSubmit}>送信</Button> */}
-                <Button className={classes.submit} type="submit">送信</Button>
+                <input className="messageText" type="text" placeholder="メッセージを入力" onChange={mainTextFunc} defaultValue=""/>
+                <Button className={classes.submit} type="submit" onClick={handleSubmit}>送信</Button>
             </form>
         </div>
         </>
