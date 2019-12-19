@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
 import ReceivedList from './components/ReceivedList/ReceivedList';
 import ReceivedBox from './components/ReceivedBox/ReceivedBox';
@@ -9,11 +9,30 @@ import SettingDisplay from './components/SettingDisplay/SettingDisplay';
 import HistoryList from './components/HistoryList/HistoryList';
 import SentList from './components/SentList/SentList';
 import './App.css';
+import { getPosts } from './modules/getPost';
+import { useDispatch } from "react-redux";
+import movieCommentsModule, { useMovieComments } from "./modules/movieCommentsModule";
+
 
 function App() {
+    const dispatch = useDispatch();
+    const updateFlag = useMovieComments()["movieComments"].mustUpdate;
+    const setOffUpdateState = () => {dispatch(movieCommentsModule.actions.setOffMustUpdateState())};
+
+    useEffect(() => {
+        if (updateFlag) {
+            async function fetchPost() {
+                const posts = getPosts(dispatch);
+                await posts();
+            }
+            fetchPost();
+            setOffUpdateState(); // updateFlag=>false
+        }
+    }, [updateFlag]);
+
     return (
         <BrowserRouter>
-            <Route exact path='/ReceivedList' component={ReceivedList} />
+            <Route exact path='/' component={ReceivedList} />
             <Route exact path='/ReceivedBox' component={ReceivedBox} />
             <Route exact path='/OutBox' component={OutBox} />
             <Route exact path='/AfterSaving' component={AfterSaving} />
@@ -21,7 +40,7 @@ function App() {
             <Route exact path='/SettingDisplay' component={SettingDisplay} />
             <Route exact path='/HistoryList' component={HistoryList} />
             <Route exact path='/SentList' component={SentList} />
-        </BrowserRouter> 
+        </BrowserRouter>
     );
 }
 

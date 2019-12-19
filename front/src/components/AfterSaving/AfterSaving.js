@@ -98,7 +98,7 @@ const AfterSaving = () => {
 
     return (
         <>
-        <Header displayLogoReturn={false} LifeTime={true} MyPageLogo={true} title="受信箱"/>
+        <Header displayLogoReturn={false} LifeTime={true} MyPageLogo={true} title="Inbox"/>
         <Footer displayColor />
 
         <div className="App-body1">
@@ -127,6 +127,7 @@ const AfterSaving = () => {
 
             <form className="messageInput" onSubmit={onSubmitMessage}>
                 <input className="messageText" type="text" placeholder="メッセージを入力" onChange={onChangeMessage} defaultValue=""/>
+                {/* <Button className={classes.submit} type="submit" onClick={handleSubmit}>送信</Button> */}
                 <Button className={classes.submit} type="submit">送信</Button>
             </form>
         </div>

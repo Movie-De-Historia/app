@@ -63,10 +63,11 @@ function ReceivedBox() {
     const onePhrase = comments.filter((comment) => comment.id === id)[0].onePhrase;
     const text = comments.filter((comment) => comment.id === id)[0].text;
     const classes = useStyles({ likeState, saveState });
+    const setOnIsSelectedState = () => dispatch(movieCommentsModule.actions.setOnIsSelected());
 
     return (
         <>
-        <Header displayLogoReturn={true} MyPageLogo={true} title="受信箱"/>
+        <Header displayLogoReturn={true} MyPageLogo={true} title="Inbox"/>
         <Footer/>
 
         <div className="App-body">
@@ -77,13 +78,13 @@ function ReceivedBox() {
             </div>
 
             <div className="buttonList">
-                <Fab variant="extended" className={classes.background} onClick={() => reverseLikeState()} >
+                <Fab variant="extended" className={classes.background} onClick={() => {reverseLikeState()}} >
                     <FavoriteIcon className={classes.like}/>
                     いいね
                 </Fab>
 
                 <Link to="AfterSaving" className="Link">
-                    <Fab variant="extended" className={classes.background} onClick={() => reverseSaveState()}>
+                    <Fab variant="extended" className={classes.background} onClick={() => {reverseSaveState();setOnIsSelectedState();}}>
                         <SaveAltIcon className={classes.save}/>
                         保存
                     </Fab>

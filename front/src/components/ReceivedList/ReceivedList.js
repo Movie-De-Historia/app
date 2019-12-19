@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useEffect} from "react";
+import { Link } from 'react-router-dom'
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import kachinko_open from "../../image/kachinko_large_open.svg";
@@ -6,27 +7,37 @@ import kachinko_close from "../../image/kachinko_large_close.svg";
 import { useDispatch } from "react-redux";
 import movieCommentsModule, { useMovieComments } from "../../modules/movieCommentsModule";
 import './ReceivedList.scss'
+import { getReviewComment } from "../../modules/getPost";
+
 
 const ReceivedList = () => {
     // stateの確認用（あとで消す）
-    const state = useMovieComments()["movieComments"].list;
-    console.log(useMovieComments()["movieComments"]);
+    const state = useMovieComments()["movieComments"];
+    console.log(state);
 
     const dispatch = useDispatch();
     // 選ばれたカチンコのIDをstoreのSelectedIdに上書きする
-    const setSelectedId = (id) => { dispatch(movieCommentsModule.actions.setSelectedId(id)); }
+    const setSelectedId = (id) => { dispatch(movieCommentsModule.actions.setSelectedId(id)); };
+    const list = useMovieComments()["movieComments"].list;
+
+    useEffect(() => {
+        list.forEach((x, idx) => {
+            const review = getReviewComment(dispatch, idx+1, x.backend_id);
+            review();
+        });
+    }, [list]);
 
     return (
         <div>
-            <Header title="受信一覧" MyPageLogo={true}/>
+            <Header title="Inbox" MyPageLogo={true}/>
             <Footer/>
             <div className="App-body">
-                {state.map((review, index) =>(
-                    <a key={index} href="/ReceivedBox" onClick={() => {setSelectedId(index)}}>
+                {list.map((review, index) =>(
+                    <Link key={index+1} to="/ReceivedBox" onClick={() => {setSelectedId(index+1)}}>
                         <div className="Content-kachinko">
                             <DisplayKachinko review={review} />
                         </div>
-                    </a>
+                    </Link>
                 ))}
             </div>
         </div>

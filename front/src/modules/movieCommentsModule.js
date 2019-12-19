@@ -2,11 +2,16 @@ import { createSlice } from "redux-starter-kit";
 import { useSelector } from "react-redux";
 
 const movieCommentsInitialState = {
-    selectedCommentId: 0,
+    selectedCommentId: 1,
     savedTime: 0,
+    isFetching: false,
+    isSelected: false,
+    mustUpdate: true,   // 時間が0になったらtrueにする, updateしたらfalseに変える
+    items: [],
     list: [
         {
-            id: 0,
+            id: 1,
+            backend_id: 1,
             title: "タイトル1",
             genre: "ジャンル1",
             onePhrase: "ひとこと1",
@@ -17,7 +22,8 @@ const movieCommentsInitialState = {
             messageInput: "",
         },
         {
-            id: 1,
+            id: 2,
+            backend_id: 2,
             title: "タイトル2",
             genre: "ジャンル2",
             onePhrase: "ひとこと2",
@@ -28,7 +34,8 @@ const movieCommentsInitialState = {
             messageInput: "",
         },
         {
-            id: 2,
+            id: 3,
+            backend_id: 3,
             title: "タイトル3",
             genre: "ジャンル3",
             onePhrase: "ひとこと3",
@@ -80,12 +87,73 @@ const movieCommentsModule = createSlice({
             const text = action.payload;
             state.list.forEach((comment, index) => {
                 comment.messageInput =
-                    selectedId === index ? text : comment.messageInput;
+                    selectedId === (index+1) ? text : comment.messageInput;
             });
         },
 
         saveTime: (state, action) => {
             state.savedTime = action.payload;
+        },
+
+        getPostsRequest: (state) => {
+            state.items.push({
+                isFetching: true,
+            });
+        },
+
+        getPostsSuccess: (state, action) => {
+            state.items.push({
+                isFetching: false,
+                items: action.payload,
+                lastUpdated: Date.now(),
+            });
+        },
+
+        getPostsFailure: (state, action) => {
+            state.items.push({
+                isFetching: false,
+                error: action.payload,
+            });
+        },
+
+        updateStateList: (state) => {
+            if (state.isFetching === false) {
+                const length = state.items.length;
+                const latestItems = state.items[length - 1];
+                state.list.forEach((x, idx) => {
+                    x.title = latestItems.items[idx].movie_title;
+                    x.onePhrase = latestItems.items[idx].head_text;
+                    x.genre = latestItems.items[idx].genre_name;
+                    x.backend_id = latestItems.items[idx].id;
+                });
+            }
+        },
+
+        updateStateText: (state, action) => {
+            if (state.isFetching === false) {
+                const idx = action.payload;
+                const length = state.items.length;
+                const latestItems = state.items[length - 1];
+                state.list.forEach((x, index) => {
+                    x.text = idx === (index+1) ? latestItems.items.comment : x.text;
+                });
+            }
+        },
+
+        setOffMustUpdateState: (state) => {
+            state.mustUpdate = false;
+        },
+
+        setOnMustUpdateState: (state) => {
+            state.mustUpdate = true;
+        },
+
+        setOffIsSelected: (state) => {
+            state.isSelected = false;
+        },
+
+        setOnIsSelected: (state) => {
+            state.isSelected = true;
         },
     }
 });
