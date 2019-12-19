@@ -29,10 +29,6 @@ function Form () {
     const [saveState, setSaveState] = useState(false);
     const classes = useStyles({ likeState, saveState });
 
-    function handleSubmit(e) {
-        e.preventDefault();
-    }
-
     return (
         <form className="styleForm">
             <input className="title" type="text" placeholder="タイトルを入力" defaultValue="" />
@@ -48,7 +44,6 @@ function Form () {
             </select>
             <textarea className="textareaOnef" name="onef" placeholder="ひとこと" defaultValue=""></textarea>
             <textarea className="textareaDesc" name="desc" placeholder="本文" defaultValue=""></textarea>
-            {/* <Fab variant="extended" type="submit" className={ classes.background } onClick={handleSubmit}> */}
             <Fab variant="extended" type="submit" className={ classes.background }>
                 送信
             </Fab>

@@ -94,10 +94,6 @@ const AfterSaving = () => {
         dispatch(movieCommentsModule.actions.saveMessageInput(messageText));
     };
 
-    function handleSubmit(e) {
-        e.preventDefault();
-    }
-
     const classes = useStyles({ likeState, saveState});
 
     return (

@@ -7,24 +7,18 @@ import kachinko_close from "../../image/kachinko_large_close.svg";
 import { useDispatch } from "react-redux";
 import movieCommentsModule, { useMovieComments } from "../../modules/movieCommentsModule";
 import './ReceivedList.scss'
-// import {getReviewComment} from getPosts;
-import { getPosts, getReviewComment } from "../../modules/getPost";
-// import { useDispatch } from "react-redux";
+import { getReviewComment } from "../../modules/getPost";
 
 
 const ReceivedList = () => {
     // stateの確認用（あとで消す）
     const state = useMovieComments()["movieComments"];
+    console.log(state);
 
     const dispatch = useDispatch();
     // 選ばれたカチンコのIDをstoreのSelectedIdに上書きする
     const setSelectedId = (id) => { dispatch(movieCommentsModule.actions.setSelectedId(id)); };
     const list = useMovieComments()["movieComments"].list;
-
-    console.log(state);
-
-    const length = state.items.length;
-    const latestItems = state.items[length - 1];
 
     useEffect(() => {
         list.forEach((x, idx) => {

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch } from "react-redux";
 import movieCommentsModule, { useMovieComments } from "../../modules/movieCommentsModule";
 import Header from '../Header/Header';
@@ -11,7 +11,6 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
 import ReportIcon from '@material-ui/icons/Report';
 import Fab from '@material-ui/core/Fab';
-import { getReviewComment } from '../../modules/getPost';
 
 const useStyles = makeStyles(theme => ({
     button:{
