@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :destroy, :update]
-  skip_before_action :authenticate!, only: [:index, :create ]
+  # skip_before_action :authenticate!, only: [:index, :create ]
 
   def index
     reviews = Review.joins(:genre)

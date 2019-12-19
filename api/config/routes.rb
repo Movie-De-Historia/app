@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   put 'message/:id', to: 'messages#update'
 
   # resources :users
-  get '/me', to: 'users#show'
+  get '/users/:id', to: 'users#show'
   get '/users', to: 'users#index'
   post '/users', to: 'users#create'
   put '/users', to: 'users#update'
