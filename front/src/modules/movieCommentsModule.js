@@ -5,7 +5,8 @@ const movieCommentsInitialState = {
     selectedCommentId: 1,
     savedTime: 0,
     isFetching: false,
-    mustUpdate: true,
+    isSelected: false,
+    mustUpdate: true,   // 時間が0になったらtrueにする, updateしたらfalseに変える
     items: [],
     list: [
         {
@@ -116,7 +117,7 @@ const movieCommentsModule = createSlice({
         },
 
         updateStateList: (state) => {
-            if (state.isFetching == false) {
+            if (state.isFetching === false) {
                 const length = state.items.length;
                 const latestItems = state.items[length - 1];
                 state.list.forEach((x, idx) => {
@@ -129,7 +130,7 @@ const movieCommentsModule = createSlice({
         },
 
         updateStateText: (state, action) => {
-            if (state.isFetching == false) {
+            if (state.isFetching === false) {
                 const idx = action.payload;
                 const length = state.items.length;
                 const latestItems = state.items[length - 1];
@@ -145,6 +146,14 @@ const movieCommentsModule = createSlice({
 
         setOnMustUpdateState: (state) => {
             state.mustUpdate = true;
+        },
+
+        setOffIsSelected: (state) => {
+            state.isSelected = false;
+        },
+
+        setOnIsSelected: (state) => {
+            state.isSelected = true;
         },
     }
 });
