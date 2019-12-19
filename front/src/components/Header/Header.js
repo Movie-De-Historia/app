@@ -72,11 +72,13 @@ const Header = ( props ) => {
                     console.log("0秒になったよ");
                     setOffIsSelectedState(); // isSelected=>false
                     setOnUpdateState(); // updateFlag=>true
-                    // 0秒になった瞬間(50ms後)，ページ移動してタイトルに戻る
-                    if (window.location.href !== "/"){
+                    // 0秒になった瞬間(100ms後)，Inbox中のどこかにページにいれば
+                    // 「/」のInboxページに移動する(戻る)
+                    // console.log(window.location.pathname);
+                    if (window.location.pathname === "/ReceivedBox" || window.location.pathname === "/AfterSaving"){
                         setTimeout(function(){
                             window.location.href = "/";
-                        }, 50);
+                        }, 100);
                     }
                 }
             }
