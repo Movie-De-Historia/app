@@ -37,6 +37,7 @@ const Header = ( props ) => {
     const [unit, setUnit] = useState("h");
     const setOnUpdateState = () => dispatch(movieCommentsModule.actions.setOnMustUpdateState());
     const setOffIsSelectedState = () => dispatch(movieCommentsModule.actions.setOffIsSelected());
+    const initializeState = () => dispatch(movieCommentsModule.actions.initializeState());
 
     const id = useMovieComments()["movieComments"].selectedCommentId;
     const comments = useMovieComments()["movieComments"].list
@@ -96,10 +97,11 @@ const Header = ( props ) => {
                     }
                     postLikeState();
 
-                    // 0秒になった瞬間(100ms後)，Inbox中のどこかにページにいれば
-                    // 「/」のInboxページに移動する(戻る)
-                    // console.log(window.location.pathname);
                     if (window.location.pathname === "/ReceivedBox" || window.location.pathname === "/AfterSaving"){
+                        // レビューをリセットするときにいいねの状態をリセットする
+                        initializeState();
+                        // 0秒になった瞬間(100ms後)，Inbox中のどこかにページにいれば
+                        // 「/」のInboxページに移動する(戻る)
                         setTimeout(function(){
                             window.location.href = "/";
                         }, 100);

@@ -52,10 +52,6 @@ const movieCommentsModule = createSlice({
     slice: "movieComments",
     initialState: movieCommentsInitialState,
     reducers: {
-        // stateの状態を初期化する
-        initializeState: (state, action) => {
-            state = movieCommentsInitialState;
-        },
 
         // いいねの状態を変更する
         reverseLikeState: (state, action) => {
@@ -63,6 +59,14 @@ const movieCommentsModule = createSlice({
             state.list.forEach(comment => {
                 comment.isLikeState =
                     comment.id === id ? !comment.isLikeState : comment.isLikeState;
+            });
+        },
+
+        // いいねと保存の状態を初期化する
+        initializeState: (state) => {
+            state.list.forEach(comment => {
+                comment.isLikeState = false;
+                comment.isSaved = false;
             });
         },
 
