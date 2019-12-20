@@ -15,7 +15,12 @@ import Fab from '@material-ui/core/Fab';
 const useStyles = makeStyles(theme => ({
     button:{
         width: "21px",
-        marginRight: theme.spacing(1),
+        // marginRight: theme.spacing(1),
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+
         '&:hover': {
             background: 'black'
         }
@@ -41,8 +46,13 @@ const useStyles = makeStyles(theme => ({
 
     background: {
         color: "white",
-        width: "100px",
+        width: "300px",
         height: "37px",
+        top: "10px",
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
         backgroundColor: "black",
         '&:hover': {
             background: 'black'
@@ -77,24 +87,24 @@ function ReceivedBox() {
                 <div className="textBottom"> { text } </div>
             </div>
 
-            <div className="buttonList">
-                <Fab variant="extended" className={classes.background} onClick={() => {reverseLikeState()}} >
+            {/* <div className="buttonList">　 */}
+                {/* <Fab variant="extended" className={classes.background} onClick={() => {reverseLikeState()}} >
                     <FavoriteIcon className={classes.like}/>
                     いいね
-                </Fab>
+                </Fab> */}
 
                 <Link to="AfterSaving" className="Link">
-                    <Fab variant="extended" className={classes.background} onClick={() => {reverseSaveState();setOnIsSelectedState();}}>
-                        <SaveAltIcon className={classes.save}/>
-                        保存
+                    {/* <Fab variant="extended" className={classes.background} onClick={() => {reverseSaveState();setOnIsSelectedState();}}> */}
+                    <Fab variant="extended" className={classes.background} onClick={setOnIsSelectedState}>
+                        みたい！！！
                     </Fab>
                 </Link>
-
+{/*
                 <Fab variant="extended" className={classes.background}>
                     <ReportIcon className={classes.button}/>
                     報告
-                </Fab>
-            </div>
+                </Fab> */}
+            {/* </div>  */}
         </div>
         </>
     );
