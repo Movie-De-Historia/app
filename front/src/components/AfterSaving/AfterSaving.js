@@ -15,7 +15,7 @@ import axios from 'axios';
 
 const useStyles = makeStyles(theme => ({
     button:{
-        width: "21px",
+        width: "31px",
         marginRight: theme.spacing(1),
         '&:hover': {
             background: 'black'
@@ -24,6 +24,7 @@ const useStyles = makeStyles(theme => ({
 
     like: ({ likeState }) => ({
         width: "16px",
+        // top: "50px",
         color: likeState ? "red" : "white",
         marginRight: theme.spacing(1),
         '&:hover': {
@@ -128,6 +129,8 @@ const AfterSaving = () => {
 
     const classes = useStyles({ likeState, saveState});
 
+    const textTop = (title.length > 11) || (onePhrase.length > 11) ? "miniTextTop" : "textTop";
+
     return (
         <>
         <Header displayLogoReturn={false} LifeTime={true} MyPageLogo={true} title="Inbox"/>
@@ -136,26 +139,9 @@ const AfterSaving = () => {
         <div className="App-body1">
             <div className="film-short">
                 <img src={image_film} alt="logo" />
-                <div className="textTop"> { title }<br/>{ genre }<br/>{ onePhrase }</div>
+                <div className={textTop}> { title }<br/>{ genre }<br/>{ onePhrase }</div>
                 <div className="textBottom"> { text } </div>
             </div>
-
-            {/* <div className="buttonList">
-                <Fab variant="extended" className={classes.background} onClick={() => reverseLikeState()} >
-                    <FavoriteIcon className={classes.like}/>
-                    いいね
-                </Fab>
-
-                <Fab variant="extended" className={classes.background} onClick={() => reverseSaveState()}>
-                    <SaveAltIcon className={classes.save}/>
-                    保存
-                </Fab>
-
-                <Fab variant="extended" className={classes.background}>
-                    <ReportIcon className={classes.button}/>
-                    報告
-                </Fab>
-            </div> */}
 
             <Fab variant="extended" className={classes.background} onClick={reverseLikeState}>
                 <FavoriteIcon className={classes.like}/>

@@ -32,7 +32,7 @@ const Header = ( props ) => {
         saveTime(date.getTime());
     };
     let lifeTime;
-    const limitTime = 0.01   // 本来は24(h)だが，デバックのため数秒になるよう設定してある(後でもとに戻す)
+    const limitTime = 0.2   // 本来は24(h)だが，デバックのため数秒になるよう設定してある(後でもとに戻す)
     const [time, setTime] = useState(limitTime);
     const [unit, setUnit] = useState("h");
     const setOnUpdateState = () => dispatch(movieCommentsModule.actions.setOnMustUpdateState());

@@ -1,5 +1,10 @@
-.App-body {
-    position: relative;
+.App-body2 {
+    // position: relative;
+    position: absolute;
+    width: 320px;
+    height: 414px;
+    left: 28px;
+    top: 90px;
     z-index: 0;
     background-color: white;
     display: flex;
@@ -8,8 +13,8 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     // top: 60px;
-    top: 32px;
-    height: 580px;
+    // top: 32px;
+    // height: 580px;
     color: white;
 }
 
@@ -34,6 +39,20 @@
     font-size: 23px;
 }
 
+.miniTextTop {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 23px;
+    width: 245px;
+    height: 101px;
+    background-color: white;
+    color: black;
+    font-size: 18px;
+}
+
 .textBottom {
     position: absolute;
     top: 146px;
@@ -43,9 +62,9 @@
     color: black;
 }
 
-.buttonList{
-    width: 330px;
-    height: 50px;
+// .buttonList{
+    // width: 330px;
+    // height: 50px;
     // display: flex;
     // flex-direction: row;
     // flex-wrap: nowrap;
@@ -54,7 +73,7 @@
     // align-items: center;
     // padding: 0px;
     // margin: 0px;
-}
+// }
 
 .Link {
     text-decoration: none;

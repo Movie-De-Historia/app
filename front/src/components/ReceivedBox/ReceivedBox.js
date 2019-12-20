@@ -74,16 +74,20 @@ function ReceivedBox() {
     const text = comments.filter((comment) => comment.id === id)[0].text;
     const classes = useStyles({ likeState, saveState });
     const setOnIsSelectedState = () => dispatch(movieCommentsModule.actions.setOnIsSelected());
+    // 文字数の長さによってフォントサイズを変える
+    const textTop = (title.length > 11) || (onePhrase.length > 11) ? "miniTextTop" : "textTop";
+    console.log(title.length);
+    console.log(onePhrase.length);
 
     return (
         <>
         <Header displayLogoReturn={true} MyPageLogo={true} title="Inbox"/>
         <Footer/>
 
-        <div className="App-body">
+        <div className="App-body2">
             <div className="film-short">
                 <img src={image_film} alt="logo" />
-                <div className="textTop"> { title }<br/>{ genre }<br/>{ onePhrase }</div>
+                <div className={textTop}> { title }<br/>{ genre }<br/>{ onePhrase }</div>
                 <div className="textBottom"> { text } </div>
             </div>
 

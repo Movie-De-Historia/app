@@ -20,21 +20,21 @@
     pointer-events: none;
 }
 
-.App-logo0 {
-    animation: App-logo-spin infinite 20s linear;
-    width: 265px;
-    margin-top: 0px;
-    pointer-events: none;
-}
-
-.App-logo1 {
+.logo1 {
     animation: App-logo-spin infinite 20s linear;
     width: 265px;
     margin-top: 20px;
     pointer-events: none;
 }
 
-.App-logo2 {
+.logo2 {
+    animation: App-logo-spin infinite 20s linear;
+    width: 265px;
+    margin-top: 20px;
+    pointer-events: none;
+}
+
+.logo3 {
     animation: App-logo-spin infinite 20s linear;
     width: 265px;
     margin-top: 20px;
@@ -57,10 +57,145 @@
     position: absolute;/*絶対配置*/
     display: inline;
     color:rgb(255, 255, 255);
-    top: 69%;
-    left: 50%;
+    top: 60%;
+    left: 45%;
     transform: translate(-50%,-50%);
     margin:0;
     padding:0;
     font-size: 18px;
+}
+
+.title1 {
+    position: absolute;
+    width: 222px;
+    height: 22px;
+    // left: 6px;
+    // top: 137px;
+    color:rgb(255, 255, 255);
+    top: 43%;
+    left: 8%;
+    // transform: translate(0%,0%);
+    margin:0;
+    padding:0;
+    font-size: 20px;
+}
+
+.title2 {
+    position: absolute;
+    width: 222px;
+    height: 22px;
+    // left: 6px;
+    // top: 137px;
+    color:rgb(255, 255, 255);
+    top: 43%;
+    left: 8%;
+    // transform: translate(0%,0%);
+    margin:0;
+    padding:0;
+    font-size: 20px;
+}
+
+.title3 {
+    position: absolute;
+    width: 222px;
+    height: 22px;
+    // left: 6px;
+    // top: 137px;
+    color:rgb(255, 255, 255);
+    top: 43%;
+    left: 8%;
+    // transform: translate(0%,0%);
+    margin:0;
+    padding:0;
+    font-size: 20px;
+}
+
+.genre1 {
+    position: absolute;
+    width: 222px;
+    height: 22px;
+    // left: 6px;
+    // top: 137px;
+    color:rgb(255, 255, 255);
+    top: 57%;
+    left: 9%;
+    // transform: translate(0%,0%);
+    margin:0;
+    padding:0;
+    font-size: 15px;
+}
+
+.genre2 {
+    position: absolute;
+    width: 222px;
+    height: 22px;
+    // left: 6px;
+    // top: 137px;
+    color:rgb(255, 255, 255);
+    top: 57%;
+    left: 9%;
+    // transform: translate(0%,0%);
+    margin:0;
+    padding:0;
+    font-size: 15px;
+}
+
+.genre3 {
+    position: absolute;
+    width: 222px;
+    height: 22px;
+    // left: 6px;
+    // top: 137px;
+    color:rgb(255, 255, 255);
+    top: 57%;
+    left: 9%;
+    // transform: translate(0%,0%);
+    margin:0;
+    padding:0;
+    font-size: 15px;
+}
+
+.onePhrase1 {
+    position: absolute;
+    width: 222px;
+    height: 22px;
+    // left: 6px;
+    // top: 137px;
+    color:rgb(255, 255, 255);
+    top: 72%;
+    left: 8%;
+    // transform: translate(0%,0%);
+    margin:0;
+    padding:0;
+    font-size: 16px;
+}
+
+.onePhrase2 {
+    position: absolute;
+    width: 222px;
+    height: 22px;
+    // left: 6px;
+    // top: 137px;
+    color:rgb(255, 255, 255);
+    top: 72%;
+    left: 8%;
+    // transform: translate(0%,0%);
+    margin:0;
+    padding:0;
+    font-size: 16px;
+}
+
+.onePhrase3 {
+    position: absolute;
+    width: 222px;
+    height: 22px;
+    // left: 6px;
+    // top: 137px;
+    color:rgb(255, 255, 255);
+    top: 72%;
+    left: 8%;
+    // transform: translate(0%,0%);
+    margin:0;
+    padding:0;
+    font-size: 16px;
 }

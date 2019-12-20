@@ -45,19 +45,28 @@ const ReceivedList = () => {
 }
 
 const DisplayKachinko = ({review}) => {
-    const kachinkoType = (review.id===0) ? kachinko_open : kachinko_close;
-    const className1 = "App-logo" + review.id;
-    // const className2 = (review.id===0) ? "kachinko-open-title" : "kachinko-close-title";
-    const className2 = "kachinko_close";
-
+    const className = "logo" + review.id;
+    const title = "title" + review.id;
+    const genre = "genre" + review.id;
+    const onePhrase = "onePhrase" + review.id;
     return(
         <>
-            <img src={kachinkoType} className={className1} alt="kachinko-logo" />
-            <p className={className2}>
-                {review.title}<br/>
-                {review.genre}<br/>
-                {review.onePhrase}<br/>
-            </p>
+            <img src={kachinko_close} className={className} alt="kachinko-logo" />
+            {/* <p className="kachinko_close"> */}
+                {/* {review.title}<br/> */}
+                {/* {review.genre}<br/> */}
+                {/* {review.onePhrase}<br/> */}
+            {/* </p> */}
+            <div className={title}>{review.title}</div>
+            <div className={genre}>{review.genre}</div>
+            <div className={onePhrase}>{review.onePhrase}</div>
+            {/* <p className="kachinko_close">
+            <font size="4">{review.title}<br/></font>
+            <font size="3">{review.genre}<br/></font>
+            <font size="3">{review.onePhrase}<br/></font> */}
+                {/* {review.genre}<br/> */}
+                {/* {review.onePhrase}<br/> */}
+            {/* </p> */}
         </>
     );
 }

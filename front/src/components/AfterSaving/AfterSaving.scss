@@ -1,5 +1,10 @@
 .App-body1{
-    position: relative;
+    // position: relative;
+    position: absolute;
+    width: 320px;
+    height: 414px;
+    left: 28px;
+    top: 90px;
     z-index: 0;
     background-color: white;
     display: flex;
@@ -20,10 +25,26 @@
     height: 424px;
     left: 0px;
     top: 0px;
+    padding-top: 0px;
+    padding-bottom: 8px;
 }
 
 .textTop {
-    position: absolute;
+    // position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 23px;
+    width: 245px;
+    height: 101px;
+    background-color: white;
+    color: black;
+    font-size: 23px;
+}
+
+.miniTextTop {
+    // position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,21 +66,9 @@
     color: black;
 }
 
-.buttonList{
-    width: 330px;
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px;
-    margin: 0px;
-}
-
 .messageInput {
     position: relative;
-    left: 0px;
+    left: -25px;
     top: 18px;
     height: 50px;
     width: 100%;
