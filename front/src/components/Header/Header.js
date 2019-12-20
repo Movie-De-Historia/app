@@ -90,7 +90,7 @@ const Header = ( props ) => {
     };
 
     const timer = useTimer();
-    console.log(timer);
+    // console.log(timer);
 
     if (props.LifeTime) {
         lifeTime =
