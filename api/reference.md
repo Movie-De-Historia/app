@@ -1,4 +1,24 @@
 # Movie De Historia API Document
+---
+## Users
+ユーザのAPIにおいては**index/create**はアクセストークンが必要．
+
+|name|type|
+|:--|:--|
+|id|integer|
+|name|string|
+|email|string|
+|password|string|
+
+### ルーティング
+
+
+### データスキーマ
+**ユーザテーブル**
+
+### リクエストサンプル
+
+---
 
 ## Log
 
@@ -110,7 +130,7 @@ IDにマッチするログの詳細を返す．
     "updated_at": "2019-11-09T06:48:06.293Z"
 }
 ```
-
+---
 ## Genre
 
 
@@ -187,6 +207,7 @@ IDにマッチするジャンル名を返す．
 ```
 1番目のジャンル名が返ってくる
 
+---
 ## Message
 
 
@@ -275,8 +296,7 @@ IDにマッチするログの詳細を返す．
 ```
 1番目のメッセージが返ってくる
 
-
-
+---
 
 ## Reviews
 レビューのAPIにおいて**CREATE/UPDATE/DESTROY**はアクセストークンが必要．
