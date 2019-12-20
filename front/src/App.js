@@ -9,6 +9,7 @@ import MyPage from './components/MyPage/MyPage';
 import SettingDisplay from './components/SettingDisplay/SettingDisplay';
 import HistoryList from './components/HistoryList/HistoryList';
 import SentList from './components/SentList/SentList';
+import RegisterPage from './components/RegisterPage/RegisterPage';
 import './App.css';
 import { getPosts } from './modules/getPost';
 import { useDispatch } from "react-redux";
@@ -34,6 +35,7 @@ function App() {
     return (
         <BrowserRouter>
             <Route exact path='/' component={LoginPage} />
+            <Route exact path='/RegisterPage' component={RegisterPage} />
             <Route exact path='/ReceivedList' component={ReceivedList} />
             <Route exact path='/ReceivedBox' component={ReceivedBox} />
             <Route exact path='/OutBox' component={OutBox} />

@@ -1,0 +1,107 @@
+// 背景を黒にする方法が分からなかったのですぐできる方法で表示
+.back_ground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background-color: black;
+}
+
+.historia{
+    position: absolute;
+    width: 172px;
+    height: 124px;
+    left: 102px;
+    top: 76px;
+}
+
+.login_form{
+    position: absolute;
+    width: 341px;
+    height: 267px;
+    left: 18px;
+    top: 237px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.login_button {
+    position: absolute;
+    width: 232px;
+    height: 37px;
+    left: 73px;
+    top: 396px;
+    color: white;
+    background: #000000;
+    border-radius: 24px;
+}
+
+.mail_address {
+    position: absolute;
+    width: 157px;
+    height: 24px;
+    left: 33px;
+    top: 252px;
+
+    // font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #000000;
+}
+
+.mail_address_form {
+    position: absolute;
+    width: 302px;
+    height: 26px;
+    left: 39px;
+    top: 280px;
+
+    border: 2px solid #000000;
+}
+
+.password {
+    position: absolute;
+    width: 157px;
+    height: 24px;
+    left: 33px;
+    top: 324px;
+
+    // font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #000000;
+}
+
+.password_form {
+    position: absolute;
+    width: 302px;
+    height: 26px;
+    left: 38px;
+    top: 352px;
+
+    border: 2px solid #000000;
+}
+
+.new_register {
+    position: absolute;
+    width: 275px;
+    height: 24px;
+    left: 51px;
+    top: 451px;
+
+    // font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+
+    color: #000000;
+}

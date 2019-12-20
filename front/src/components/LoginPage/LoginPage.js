@@ -23,7 +23,7 @@ const LoginPage = () => {
                         ログイン
                 </Fab>
             </Link>
-            <div className="new_register">新規会員登録はこちら</div>
+            <div className="new_register">新規会員登録は<Link to="/RegisterPage" style={{ textDecoration: 'none', color: 'black' }}>こちら</Link></div>
             <div className="line"></div>
         </>
 
