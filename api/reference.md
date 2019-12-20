@@ -385,6 +385,7 @@ IDにマッチするレビューの詳細を取得します．
 リクエスト例
 ```
 {
+    "user_id": 2
 	"genre_id": 19,
 	"movie_title": "hoge",
 	"head_text": "面白かった",

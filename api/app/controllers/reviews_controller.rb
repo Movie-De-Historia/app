@@ -21,9 +21,9 @@ class ReviewsController < ApplicationController
 
   def create
     json_request = JSON.parse(request.body.read)
-    user = current_user
+    user = User.find_by(id: json_request[:user_id])
     if !json_request.blank?
-      json_request[:user_id] = user.id
+      # json_request[:user_id] = user.id
       @review = Review.new(json_request)
       p "user"
       p user
