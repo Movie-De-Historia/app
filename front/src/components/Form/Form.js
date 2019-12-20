@@ -59,12 +59,12 @@ function Form () {
                 //     "spoiler": false, // ネタバレは現在ボタンがないため，一応falseを与えておく
                 // }
                 {
-                    "user_id": 2,
-                    "genre_id": 19,
+                    "user_id": "2",
+                    "genre_id": "19",
                     "movie_title": "hoge",
                     "head_text": "面白かった",
                     "comment": "和気藹々として喜怒哀楽な感じ",
-                    "spoiler": true
+                    "spoiler": "true"
                 }
                 )
                 .then(res => console.log(res));
