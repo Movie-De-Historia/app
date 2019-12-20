@@ -50,11 +50,12 @@ function Form () {
         } else {
             async function postMessage() {
                 await axios.post(`http://localhost:3000/reviews`, {
-                    genre_id: genre,
-                    movie_title: title,
-                    head_text: shortText,
-                    comment: mainText,
-                    spoiler: false, // ネタバレは現在ボタンがないため，一応falseを与えておく
+                    "user_id": 2, // userの判別はまだ行えてないので仮で与えている
+                    "genre_id": genre,
+                    "movie_title": title,
+                    "head_text": shortText,
+                    "comment": mainText,
+                    "spoiler": false, // ネタバレは現在ボタンがないため，一応falseを与えておく
                 })
                 .then(res => console.log(res));
             }
