@@ -49,14 +49,24 @@ function Form () {
             console.log("未入力な項目があります.");
         } else {
             async function postMessage() {
-                await axios.post(`http://localhost:3000/reviews`, {
-                    "user_id": 2, // userの判別はまだ行えてないので仮で与えている
-                    "genre_id": genre,
-                    "movie_title": title,
-                    "head_text": shortText,
-                    "comment": mainText,
-                    "spoiler": false, // ネタバレは現在ボタンがないため，一応falseを与えておく
-                })
+                await axios.post(`http://localhost:3000/reviews`,
+                // {
+                //     "user_id": 2, // userの判別はまだ行えてないので仮で与えている
+                //     "genre_id": genre,
+                //     "movie_title": title,
+                //     "head_text": shortText,
+                //     "comment": mainText,
+                //     "spoiler": false, // ネタバレは現在ボタンがないため，一応falseを与えておく
+                // }
+                {
+                    "user_id": 2,
+                    "genre_id": 19,
+                    "movie_title": "hoge",
+                    "head_text": "面白かった",
+                    "comment": "和気藹々として喜怒哀楽な感じ",
+                    "spoiler": true
+                }
+                )
                 .then(res => console.log(res));
             }
             postMessage();
