@@ -16,7 +16,7 @@ const LoginPage = () => {
             </form>
             <div className="password">パスワード</div>
             <form>
-                <input className="password_form" type="text" defaultValue="" />
+                <input className="password_form" type="password" defaultValue="" />
             </form>
             <Link to="/ReceivedList">
                 <Fab variant="extended" className="login_button">
