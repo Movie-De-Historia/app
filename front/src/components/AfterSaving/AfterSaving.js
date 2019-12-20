@@ -11,6 +11,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
 import ReportIcon from '@material-ui/icons/Report';
 import Fab from '@material-ui/core/Fab';
+import axios from 'axios';
 
 const useStyles = makeStyles(theme => ({
     button:{
@@ -79,31 +80,44 @@ const AfterSaving = () => {
     const genre = comments.filter((comment) => comment.id === id)[0].genre;
     const onePhrase = comments.filter((comment) => comment.id === id)[0].onePhrase;
     const text = comments.filter((comment) => comment.id === id)[0].text;
-    // const onChangeMessage = (e) => { messageText = e.target.value };
-    const onSubmitMessage = () => {
-        // messageTextがnullか空のときは何もしない
-        if (!messageText) {
-            // デバック用，あとで消す
-            console.log("送信できません");
-            return;
-        }
 
-        // デバック用，あとで消す
-        console.log("送信完了");
-        // tokenと一緒にメッセージ内容をreduxに渡し，保存する
-        dispatch(movieCommentsModule.actions.saveMessageInput(messageText));
-    };
-
-    const [mainText, setMainText] = useState("");
-    const mainTextFunc = (e) => {setMainText(e.target.value)};
+    const [message, setMessage] = useState("");
+    const messageFunc = (e) => {setMessage(e.target.value)};
 
     function handleSubmit(e) {
         // 入力していない場所があれば送信できないように変更
-        if (mainText==="") {
+        if (message==="") {
             e.preventDefault();
             console.log("未入力な項目があります.")
         }
     }
+
+    const onSubmitMessage = () => {
+        // // messageTextがnullか空のときは何もしない
+        // if (!messageText) {
+        //     // デバック用，あとで消す
+        //     console.log("送信できません");
+        //     return;
+        // }
+
+        // デバック用，あとで消す
+        console.log("送信完了");
+        // tokenと一緒にメッセージ内容をreduxに渡し，保存する
+        // やっぱり保存する必要ないかも(一応保存しておく)
+        dispatch(movieCommentsModule.actions.saveMessageInput(messageText));
+
+        // messageの送信
+        async function postMessage() {
+            await axios.post(`http://localhost:3000/message`,
+            {
+                "review_id":1,
+                "message": message,
+            }
+            )
+            .then(res => console.log(res));
+        }
+        postMessage();
+    };
 
     const classes = useStyles({ likeState, saveState});
 
@@ -137,7 +151,7 @@ const AfterSaving = () => {
             </div>
 
             <form className="messageInput" onSubmit={onSubmitMessage}>
-                <input className="messageText" type="text" placeholder="メッセージを入力" onChange={mainTextFunc} defaultValue=""/>
+                <input className="messageText" type="text" placeholder="メッセージを入力" onChange={messageFunc} defaultValue=""/>
                 <Button className={classes.submit} type="submit" onClick={handleSubmit}>送信</Button>
             </form>
         </div>

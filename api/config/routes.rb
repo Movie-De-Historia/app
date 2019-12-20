@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'message/:id', to: 'messages#show'
   post 'message', to: 'messages#create'
   put 'message/:id', to: 'messages#update'
+  delete 'message/:id', to: 'messages#destroy'
 
   # resources :users
   get '/users/:id', to: 'users#show'
@@ -28,4 +29,3 @@ Rails.application.routes.draw do
   put '/reviews/:id', to: 'reviews#update'
 
 end
-

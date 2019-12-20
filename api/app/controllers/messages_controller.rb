@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:show, :update]
+  before_action :set_message, only: [:show, :destroy, :update]
 
   def index
     @messages = Message.all
@@ -23,6 +23,11 @@ class MessagesController < ApplicationController
     else
       render json: {message: 'EROOR'}, status: :bad_request
     end
+  end
+
+  def destroy
+    @message.destroy
+    render json: {message: :ok}, status: :ok
   end
 
   def update
