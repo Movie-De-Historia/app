@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
+import LoginPage from './components/LoginPage/LoginPage'
 import ReceivedList from './components/ReceivedList/ReceivedList';
 import ReceivedBox from './components/ReceivedBox/ReceivedBox';
 import OutBox from './components/OutBox/OutBox';
