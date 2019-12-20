@@ -7,7 +7,9 @@
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    top: 60px;
+    // top: 60px;
+    top: 32px;
+    height: 580px;
     color: white;
 }
 
@@ -44,15 +46,21 @@
 .buttonList{
     width: 330px;
     height: 50px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px;
-    margin: 0px;
+    // display: flex;
+    // flex-direction: row;
+    // flex-wrap: nowrap;
+    // justify-content: space-between;
+    // justify-content: center;
+    // align-items: center;
+    // padding: 0px;
+    // margin: 0px;
 }
 
 .Link {
     text-decoration: none;
+    // position: absolute;
+    // width: 136px;
+    // height: 37px;
+    // left: 120px;
+    // top: 505px;
 }

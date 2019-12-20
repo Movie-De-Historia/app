@@ -103,7 +103,7 @@ const Header = ( props ) => {
                         // 0秒になった瞬間(100ms後)，Inbox中のどこかにページにいれば
                         // 「/」のInboxページに移動する(戻る)
                         setTimeout(function(){
-                            window.location.href = "/";
+                            window.location.href = "/ReceivedList";
                         }, 100);
                     }
                 }
@@ -131,7 +131,7 @@ const Header = ( props ) => {
     return (
         <header className={"App-header-" + DisplayColor}>
             <h1>{title}</h1>
-            <Link to='/'> {LogoReturn} </Link>
+            <Link to='/ReceivedList'> {LogoReturn} </Link>
             <Link to='/MyPage'> {MyPageLogo} </Link>
             {lifeTime}
         </header>

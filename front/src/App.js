@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
+import LoginPage from './components/LoginPage/LoginPage'
 import ReceivedList from './components/ReceivedList/ReceivedList';
 import ReceivedBox from './components/ReceivedBox/ReceivedBox';
 import OutBox from './components/OutBox/OutBox';
@@ -32,7 +33,8 @@ function App() {
 
     return (
         <BrowserRouter>
-            <Route exact path='/' component={ReceivedList} />
+            <Route exact path='/' component={LoginPage} />
+            <Route exact path='/ReceivedList' component={ReceivedList} />
             <Route exact path='/ReceivedBox' component={ReceivedBox} />
             <Route exact path='/OutBox' component={OutBox} />
             <Route exact path='/AfterSaving' component={AfterSaving} />
