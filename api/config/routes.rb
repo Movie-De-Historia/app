@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   # resources :reviews
   get '/reviews', to: 'reviews#index'
+  get '/reviews_all', to: 'reviews#index_all'
   get '/reviews/:id', to: 'reviews#show'
   post '/reviews', to: 'reviews#create'
   delete '/reviews/:id', to: 'reviews#destroy'

@@ -15,6 +15,12 @@ class ReviewsController < ApplicationController
     render json: response
   end
 
+  def index_all
+    @review = Review.all
+
+    render json: @review
+  end
+
   def show
     render json: @review
   end

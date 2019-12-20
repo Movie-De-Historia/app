@@ -81,6 +81,13 @@ const AfterSaving = () => {
     const onePhrase = comments.filter((comment) => comment.id === id)[0].onePhrase;
     const text = comments.filter((comment) => comment.id === id)[0].text;
 
+    const review_id = comments[id-1].backend_id;
+    console.log("comments");
+    console.log(comments);
+    console.log("id")
+    console.log(id-1);
+    console.log("review_id");
+    console.log(review_id);
     const [message, setMessage] = useState("");
     const messageFunc = (e) => {setMessage(e.target.value)};
 
@@ -110,7 +117,7 @@ const AfterSaving = () => {
         async function postMessage() {
             await axios.post(`http://localhost:3000/message`,
             {
-                "review_id":1,
+                "review_id": review_id,
                 "message": message,
             }
             )

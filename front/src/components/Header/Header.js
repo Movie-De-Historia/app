@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import { useDispatch } from "react-redux";
 import movieCommentsModule, { useMovieComments } from "../../modules/movieCommentsModule";
+import axios from 'axios';
 
 const Header = ( props ) => {
     const LogoReturn = props.displayLogoReturn ? <img src={logo_return} className="logo-return" alt="logo" /> : <></>;
@@ -31,11 +32,20 @@ const Header = ( props ) => {
         saveTime(date.getTime());
     };
     let lifeTime;
-    const limitTime = 0.005   // 本来は24(h)だが，デバックのため数秒になるよう設定してある(後でもとに戻す)
+    const limitTime = 0.01   // 本来は24(h)だが，デバックのため数秒になるよう設定してある(後でもとに戻す)
     const [time, setTime] = useState(limitTime);
     const [unit, setUnit] = useState("h");
     const setOnUpdateState = () => dispatch(movieCommentsModule.actions.setOnMustUpdateState());
     const setOffIsSelectedState = () => dispatch(movieCommentsModule.actions.setOffIsSelected());
+
+    const id = useMovieComments()["movieComments"].selectedCommentId;
+    const comments = useMovieComments()["movieComments"].list
+    // 現在のレビューに対してlikeが押されているかどうか(いまのところどのレビューにも行けるからそこは改めて行けないように修正しないといけない)
+    const like = comments[id-1].isLikeState;
+    const review_id = comments[id-1].backend_id;
+    console.log("like_state");
+    console.log(like);
+    console.log(review_id);
 
     const useTimer = () => {
         useEffect(() => {
@@ -72,6 +82,20 @@ const Header = ( props ) => {
                     console.log("0秒になったよ");
                     setOffIsSelectedState(); // isSelected=>false
                     setOnUpdateState(); // updateFlag=>true
+
+                    // likeの状態をlogに送信する
+                    async function postLikeState() {
+                        await axios.post(`http://localhost:3000/log`,
+                        {
+                            "user_id": 1, // userの判別はまだ行えてないので仮で1として与えている
+                            "review_id": review_id,
+                            "like": like
+                        }
+                        )
+                        .then(res => console.log(res));
+                    }
+                    postLikeState();
+
                     // 0秒になった瞬間(100ms後)，Inbox中のどこかにページにいれば
                     // 「/」のInboxページに移動する(戻る)
                     // console.log(window.location.pathname);
