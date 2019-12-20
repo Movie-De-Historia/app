@@ -38,9 +38,6 @@ function Form () {
     const genreFunc = (e) => {setGenre(e.target.value)};
     const shortTextFunc = (e) => {setShortText(e.target.value)};
     const mainTextFunc = (e) => {setMainText(e.target.value)};
-    // console.log(title, genre, shortText, mainText);
-    // console.log(title!=""&&genre!=""&&shortText!=""&&mainText!="")
-    // console.log(title===""||genre===""||shortText===""||mainText==="")
 
     function handleClick(e) {
         // 入力していない場所があれば送信できないように変更
@@ -50,21 +47,13 @@ function Form () {
         } else {
             async function postMessage() {
                 await axios.post(`http://localhost:3000/reviews`,
-                // {
-                //     "user_id": 2, // userの判別はまだ行えてないので仮で与えている
-                //     "genre_id": genre,
-                //     "movie_title": title,
-                //     "head_text": shortText,
-                //     "comment": mainText,
-                //     "spoiler": false, // ネタバレは現在ボタンがないため，一応falseを与えておく
-                // }
                 {
-                    "user_id": "2",
-                    "genre_id": "19",
-                    "movie_title": "hoge",
-                    "head_text": "面白かった",
-                    "comment": "和気藹々として喜怒哀楽な感じ",
-                    "spoiler": "true"
+                    "user_id": 1, // userの判別はまだ行えてないので仮で与えている
+                    "genre_id": genre,
+                    "movie_title": title,
+                    "head_text": shortText,
+                    "comment": mainText,
+                    "spoiler": false, // ネタバレは現在ボタンがないため，一応falseを与えておく
                 }
                 )
                 .then(res => console.log(res));
