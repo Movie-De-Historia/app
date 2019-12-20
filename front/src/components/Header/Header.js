@@ -132,7 +132,6 @@ const Header = ( props ) => {
         <header className={"App-header-" + DisplayColor}>
             <h1>{title}</h1>
             <Link to='/ReceivedList'> {LogoReturn} </Link>
-            <Link to='/MyPage'> {MyPageLogo} </Link>
             {lifeTime}
         </header>
     );

@@ -41,7 +41,6 @@ function App() {
             <Route exact path='/OutBox' component={OutBox} />
             <Route exact path='/AfterSaving' component={AfterSaving} />
             <Route exact path='/MyPage' component={MyPage} />
-            <Route exact path='/SettingDisplay' component={SettingDisplay} />
             <Route exact path='/HistoryList' component={HistoryList} />
             <Route exact path='/SentList' component={SentList} />
         </BrowserRouter>
