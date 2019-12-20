@@ -77,7 +77,7 @@ const Header = ( props ) => {
                     // console.log(window.location.pathname);
                     if (window.location.pathname === "/ReceivedBox" || window.location.pathname === "/AfterSaving"){
                         setTimeout(function(){
-                            window.location.href = "/";
+                            window.location.href = "/ReceivedList";
                         }, 100);
                     }
                 }
@@ -105,7 +105,7 @@ const Header = ( props ) => {
     return (
         <header className={"App-header-" + DisplayColor}>
             <h1>{title}</h1>
-            <Link to='/'> {LogoReturn} </Link>
+            <Link to='/ReceivedList'> {LogoReturn} </Link>
             <Link to='/MyPage'> {MyPageLogo} </Link>
             {lifeTime}
         </header>

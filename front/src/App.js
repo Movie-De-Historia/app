@@ -32,7 +32,8 @@ function App() {
 
     return (
         <BrowserRouter>
-            <Route exact path='/' component={ReceivedList} />
+            <Route exact path='/' component={LoginPage} />
+            <Route exact path='/ReceivedList' component={ReceivedList} />
             <Route exact path='/ReceivedBox' component={ReceivedBox} />
             <Route exact path='/OutBox' component={OutBox} />
             <Route exact path='/AfterSaving' component={AfterSaving} />
