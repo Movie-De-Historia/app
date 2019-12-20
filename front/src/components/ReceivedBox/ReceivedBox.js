@@ -93,12 +93,12 @@ function ReceivedBox() {
                     いいね
                 </Fab> */}
 
-                <Link to="AfterSaving" className="Link">
-                    {/* <Fab variant="extended" className={classes.background} onClick={() => {reverseSaveState();setOnIsSelectedState();}}> */}
-                    <Fab variant="extended" className={classes.background} onClick={setOnIsSelectedState}>
-                        みたい！！！
-                    </Fab>
-                </Link>
+            <Link to="AfterSaving" className="Link">
+                {/* <Fab variant="extended" className={classes.background} onClick={() => {reverseSaveState();setOnIsSelectedState();}}> */}
+                <Fab variant="extended" className={classes.background} onClick={setOnIsSelectedState}>
+                    みたい！！！
+                </Fab>
+            </Link>
 {/*
                 <Fab variant="extended" className={classes.background}>
                     <ReportIcon className={classes.button}/>

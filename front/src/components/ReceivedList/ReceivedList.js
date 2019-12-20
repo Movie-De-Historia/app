@@ -47,7 +47,8 @@ const ReceivedList = () => {
 const DisplayKachinko = ({review}) => {
     const kachinkoType = (review.id===0) ? kachinko_open : kachinko_close;
     const className1 = "App-logo" + review.id;
-    const className2 = (review.id===0) ? "kachinko-open-title" : "kachinko-close-title";
+    // const className2 = (review.id===0) ? "kachinko-open-title" : "kachinko-close-title";
+    const className2 = "kachinko_close";
 
     return(
         <>

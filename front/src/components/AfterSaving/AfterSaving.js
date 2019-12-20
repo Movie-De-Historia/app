@@ -108,7 +108,7 @@ const AfterSaving = () => {
                 <div className="textBottom"> { text } </div>
             </div>
 
-            <div className="buttonList">
+            {/* <div className="buttonList">
                 <Fab variant="extended" className={classes.background} onClick={() => reverseLikeState()} >
                     <FavoriteIcon className={classes.like}/>
                     いいね
@@ -123,7 +123,12 @@ const AfterSaving = () => {
                     <ReportIcon className={classes.button}/>
                     報告
                 </Fab>
-            </div>
+            </div> */}
+
+            <Fab variant="extended" className={classes.background} onClick={reverseLikeState}>
+                <FavoriteIcon className={classes.like}/>
+                いいね
+            </Fab>
 
             <form className="messageInput" onSubmit={onSubmitMessage}>
                 <input className="messageText" type="text" placeholder="メッセージを入力" onChange={onChangeMessage} defaultValue=""/>
