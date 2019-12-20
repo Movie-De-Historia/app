@@ -1,6 +1,12 @@
 .App-header-black {
+    position: absolute;
+    width: 92px;
+    height: 28px;
+    left: 142px;
+    top: 10px;
+
     z-index: 1;
-    position: fixed; /* ヘッダーを固定する */
+    /* position: fixed; /*ヘッダーを固定する */
     top: 0; /* 上部から配置の基準位置を決める */
     left: 0; /* 左から配置の基準位置を決める */
     width: 100%; /* ヘッダーの横幅を指定する */

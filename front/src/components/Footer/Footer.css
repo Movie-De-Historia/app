@@ -1,4 +1,9 @@
 .App-footer-black {
+    position: absolute;
+    width: 375px;
+    height: 48px;
+    left: 0px;
+    top: 619px;
     z-index: 1;
     position: fixed; /* フッターを固定する */
     bottom: 0; /* 上部から配置の基準位置を決める */
@@ -40,7 +45,7 @@
     height: 25px;
     background-color:rgb(205, 205, 205);
     color: black;
-    
+
 }
 
 .Footer-plane-black {
