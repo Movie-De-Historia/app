@@ -7,6 +7,11 @@ const movieCommentsInitialState = {
     isFetching: false,
     isSelected: false,
     mustUpdate: true,   // 時間が0になったらtrueにする, updateしたらfalseに変える
+    log: [],
+    review: [],
+    countLikes: 0,
+    didValues: [],
+    didKeys: [],
     items: [],
     list: [
         {
@@ -159,6 +164,34 @@ const movieCommentsModule = createSlice({
         setOnIsSelected: (state) => {
             state.isSelected = true;
         },
+
+        getLog: (state, action) => {
+            state.log = action.payload;
+        },
+
+        getReview: (state, action) => {
+            state.review = action.payload;
+        },
+
+        countNbLikes: (state) => {
+            state.log.data.forEach((x) => {
+                if (x.user_id === 1) {
+                    state.countLikes += 1;
+                }
+            });
+        },
+
+        initializeNbLikes: (state) => {
+            state.countLikes = 0;
+        },
+
+        saveDidValues: (state, action) => {
+            state.didValues = action.payload;
+        },
+
+        saveDidKeys: (state, action) => {
+            state.didKeys = action.payload;
+        }
     }
 });
 

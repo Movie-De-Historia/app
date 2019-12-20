@@ -44,9 +44,9 @@ const Header = ( props ) => {
     // 現在のレビューに対してlikeが押されているかどうか(いまのところどのレビューにも行けるからそこは改めて行けないように修正しないといけない)
     const like = comments[id-1].isLikeState;
     const review_id = comments[id-1].backend_id;
-    console.log("like_state");
-    console.log(like);
-    console.log(review_id);
+    // console.log("like_state");
+    // console.log(like);
+    // console.log(review_id);
 
     const useTimer = () => {
         useEffect(() => {
