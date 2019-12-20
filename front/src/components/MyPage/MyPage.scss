@@ -2,7 +2,7 @@
     position: absolute;
     width: 128px;
     height: 51px;
-    left: 134px;
+    left: 155px;
     top: 88px;
 
     font-family: Arial Rounded MT Bold;
@@ -10,9 +10,8 @@
     font-weight: normal;
     font-size: 50px;
     line-height: 58px;
-    display: flex;
-    align-items: center;
-    text-align: center;
+    // align-items: center;
+    // text-align: center;
 
     color: #000000;
 
@@ -23,7 +22,7 @@
     position: absolute;
     width: 98px;
     height: 16px;
-    left: 139px;
+    left: 142px;
     top: 145px;
 
     font-family: Arial Rounded MT Bold;
@@ -39,6 +38,7 @@
 }
 
 .Line {
+    z-index: 1;
     position: absolute;
     width: 375px;
     height: 0px;
@@ -68,14 +68,19 @@
 }
 
 .PostHistory {
+    position: absolute;
+    width: 125px;
+    height: 66px;
+    left: 25px;
+    top: 20px;
     font-family: Arial Rounded MT Bold;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 21px;
-    display: flex;
-    align-items: center;
-    text-align: center;
+    // display: flex;
+    // align-items: center;
+    // text-align: center;
     color: #000000;
 }
 
@@ -99,14 +104,19 @@
 }
 
 .IineSitaReview {
+    position: absolute;
+    width: 125px;
+    height: 66px;
+    left: 19px;
+    top: 12px;
     font-family: Arial Rounded MT Bold;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 21px;
-    display: flex;
-    align-items: center;
-    text-align: center;
+    // display: flex;
+    // align-items: center;
+    // text-align: center;
     color: #000000;
 }
 
@@ -130,14 +140,19 @@
 }
 
 .IineSaretaReview {
+    position: absolute;
+    width: 125px;
+    height: 66px;
+    left: 10px;
+    top: 12px;
     font-family: Arial Rounded MT Bold;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 21px;
-    display: flex;
-    align-items: center;
-    text-align: center;
+    // display: flex;
+    // align-items: center;
+    // text-align: center;
     color: #000000;
 }
 

@@ -152,7 +152,7 @@ function MyPage() {
     };
 
     //　真ん中のときにいいねした数のサークルを出す
-    circleDid = ((colorState === "center") && (didValuesState != []) && (didKeysState != [])) ? <Donut className="didDonut" series={didValuesState}></Donut> : <div>何もないです</div> ;
+    circleDid = ((colorState === "center") && (didValuesState != []) && (didKeysState != [])) ? <Donut className="didDonut" series={didValuesState}></Donut> : <div></div> ;
 
 
     useEffect(() => {
@@ -220,7 +220,7 @@ function MyPage() {
                 <div className="PostHistory">投稿履歴</div>
             </div>
             <div className={centerColor} onClick={() => setColorState("center")}>
-                <div className="IineSitaReview">いいねしたレビュー</div>
+                <div className="IineSitaReview">いいねした　レビュー</div>
             </div>
             <div className={rightColor} onClick={() => setColorState("right")}>
                 <div className="IineSaretaReview">いいねされたレビュー</div>
