@@ -13,12 +13,15 @@ import { getReviewComment } from "../../modules/getPost";
 const ReceivedList = () => {
     // stateの確認用（あとで消す）
     const state = useMovieComments()["movieComments"];
-    // console.log(state);
+    // Inboxの移動先Path
+    const InboxPath = useMovieComments()["movieComments"].InboxPath;
 
     const dispatch = useDispatch();
     // 選ばれたカチンコのIDをstoreのSelectedIdに上書きする
     const setSelectedId = (id) => { dispatch(movieCommentsModule.actions.setSelectedId(id)); };
     const list = useMovieComments()["movieComments"].list;
+
+    const setOnIsSelectedState = () => dispatch(movieCommentsModule.actions.setOnIsSelected());
 
     useEffect(() => {
         list.forEach((x, idx) => {
@@ -33,7 +36,8 @@ const ReceivedList = () => {
             <Footer/>
             <div className="App-body">
                 {list.map((review, index) =>(
-                    <Link key={index+1} to="/ReceivedBox" onClick={() => {setSelectedId(index+1)}}>
+                    // <Link key={index+1} to="/ReceivedBox" onClick={() => {setSelectedId(index+1)}}>
+                    <Link key={index+1} to={InboxPath} onClick={() => {setSelectedId(index+1); if (InboxPath==="/AfterSaving") {setOnIsSelectedState()}}}>
                         <div className="Content-kachinko">
                             <DisplayKachinko review={review} />
                         </div>

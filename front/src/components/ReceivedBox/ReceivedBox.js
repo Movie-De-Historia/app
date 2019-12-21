@@ -64,6 +64,8 @@ function ReceivedBox() {
     const dispatch = useDispatch();
     const reverseLikeState = () => dispatch(movieCommentsModule.actions.reverseLikeState());
     const reverseSaveState = () => dispatch(movieCommentsModule.actions.reverseSaveState());
+    const setInboxPath = (path) => dispatch(movieCommentsModule.actions.setInboxPath(path));
+    setInboxPath("/AfterSaving")
     const id = useMovieComments()["movieComments"].selectedCommentId;
     const comments = useMovieComments()["movieComments"].list;
     const likeState = comments.filter((comment) => comment.id === id)[0].isLikeState;
@@ -97,7 +99,7 @@ function ReceivedBox() {
                     いいね
                 </Fab> */}
 
-            <Link to="AfterSaving" className="Link">
+            <Link to="/AfterSaving" className="Link">
                 {/* <Fab variant="extended" className={classes.background} onClick={() => {reverseSaveState();setOnIsSelectedState();}}> */}
                 <Fab variant="extended" className={classes.background} onClick={setOnIsSelectedState}>
                     みたい！！！

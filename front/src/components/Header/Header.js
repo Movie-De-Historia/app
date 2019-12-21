@@ -32,12 +32,13 @@ const Header = ( props ) => {
         saveTime(date.getTime());
     };
     let lifeTime;
-    const limitTime = 0.2   // 本来は24(h)だが，デバックのため数秒になるよう設定してある(後でもとに戻す)
+    const limitTime = 0.01   // 本来は24(h)だが，デバックのため数秒になるよう設定してある(後でもとに戻す)
     const [time, setTime] = useState(limitTime);
     const [unit, setUnit] = useState("h");
     const setOnUpdateState = () => dispatch(movieCommentsModule.actions.setOnMustUpdateState());
     const setOffIsSelectedState = () => dispatch(movieCommentsModule.actions.setOffIsSelected());
     const initializeState = () => dispatch(movieCommentsModule.actions.initializeState());
+    const setInboxPath = (path) => dispatch(movieCommentsModule.actions.setInboxPath(path));
 
     const id = useMovieComments()["movieComments"].selectedCommentId;
     const comments = useMovieComments()["movieComments"].list
@@ -76,7 +77,8 @@ const Header = ( props ) => {
             } else {
                 setUnit("s");
             };
-
+            console.log("isSelected");
+            console.log(isSelected);
             // 残り時間が0秒になったときの処理
             if (elapsedTime <= 0){
                 if (isSelected){
@@ -97,15 +99,18 @@ const Header = ( props ) => {
                     }
                     postLikeState();
 
-                    if (window.location.pathname === "/ReceivedBox" || window.location.pathname === "/AfterSaving"){
+                    // 時間がないのでどのページにいても強制的に最初の画面に戻るようにします(今後のアップデートに期待!)
+                    // if (window.location.pathname === "/ReceivedBox" || window.location.pathname === "/AfterSaving"){
                         // レビューをリセットするときにいいねの状態をリセットする
                         initializeState();
+                        // Inboxの移動先のpathをリセットする
+                        setInboxPath("/ReceivedBox")
                         // 0秒になった瞬間(100ms後)，Inbox中のどこかにページにいれば
                         // 「/」のInboxページに移動する(戻る)
                         setTimeout(function(){
                             window.location.href = "/ReceivedList";
                         }, 100);
-                    }
+                    // }
                 }
             }
 
@@ -116,7 +121,7 @@ const Header = ( props ) => {
     };
 
     const timer = useTimer();
-    // console.log(timer);
+    console.log(timer);
 
     if (props.LifeTime) {
         lifeTime =
@@ -131,7 +136,7 @@ const Header = ( props ) => {
     return (
         <header className={"App-header-" + DisplayColor}>
             <h1>{title}</h1>
-            <Link to='/ReceivedList'> {LogoReturn} </Link>
+            {/* <Link to='/ReceivedList'> {LogoReturn} </Link> */}
             {lifeTime}
         </header>
     );

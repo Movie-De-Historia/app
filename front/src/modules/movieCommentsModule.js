@@ -7,6 +7,7 @@ const movieCommentsInitialState = {
     isFetching: false,
     isSelected: false,
     mustUpdate: true,   // 時間が0になったらtrueにする, updateしたらfalseに変える
+    InboxPath: "/ReceivedBox", // Inboxの移動先Path
     log: [],
     review: [],
     countLikes: 0,
@@ -191,7 +192,11 @@ const movieCommentsModule = createSlice({
 
         saveDidKeys: (state, action) => {
             state.didKeys = action.payload;
-        }
+        },
+
+        setInboxPath: (state, action) => {
+            state.InboxPath = action.payload; // Inboxの移動先Pathをセットする
+        },
     }
 });
 
