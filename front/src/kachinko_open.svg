@@ -1,0 +1,27 @@
+<svg width="172" height="147" viewBox="0 0 172 147" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="8" y="52" width="158" height="95" fill="black"/>
+<g clip-path="url(#clip0)">
+<rect width="170" height="19" transform="translate(2 33)" fill="white"/>
+<rect x="2" y="33" width="170" height="19" fill="black"/>
+<rect width="22.8699" height="30.7477" transform="matrix(0.90531 0.424752 -0.27173 0.962374 133.296 23)" fill="white"/>
+<rect width="22.8699" height="30.7477" transform="matrix(0.90531 0.424752 -0.27173 0.962374 104.038 23)" fill="white"/>
+<rect width="22.8699" height="30.7477" transform="matrix(0.90531 0.424752 -0.27173 0.962374 75.3353 23)" fill="white"/>
+<rect width="22.8699" height="30.7477" transform="matrix(0.90531 0.424752 -0.27173 0.962374 46.355 23)" fill="white"/>
+</g>
+<g clip-path="url(#clip1)">
+<rect width="170" height="19" transform="translate(0 18.6835) rotate(-6.3097)" fill="white"/>
+<rect y="18.6835" width="170" height="19" transform="rotate(-6.3097 0 18.6835)" fill="black"/>
+<rect width="22.8699" height="30.7477" transform="matrix(0.97366 -0.228006 0.383448 0.923563 120.67 1.57764)" fill="white"/>
+<rect width="22.8699" height="30.7477" transform="matrix(0.97366 -0.228006 0.383448 0.923563 91.5894 4.79309)" fill="white"/>
+<rect width="22.8699" height="30.7477" transform="matrix(0.97366 -0.228006 0.383448 0.923563 63.0602 7.94763)" fill="white"/>
+<rect width="22.8699" height="30.7477" transform="matrix(0.97366 -0.228006 0.383448 0.923563 34.2555 11.1326)" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="170" height="19" fill="white" transform="translate(2 33)"/>
+</clipPath>
+<clipPath id="clip1">
+<rect width="170" height="19" fill="white" transform="translate(0 18.6835) rotate(-6.3097)"/>
+</clipPath>
+</defs>
+</svg>
